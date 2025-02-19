@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: Pace Insights
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
