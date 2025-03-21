@@ -1,0 +1,26 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import { findLatestPosts } from '~/utils/blog';
+
+export const prerender = true;
+
+const metadata = {
+  title: 'Articles',
+  description: 'Stay updated with the latest insights on AI implementation, strategy, and innovation from Pace Insights.',
+};
+
+const posts = await findLatestPosts({ count: 6 }); // Show 6 posts per page
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline
+      subtitle="Stay updated with the latest insights on AI implementation, strategy, and innovation from Pace Insights."
+    >
+      Articles
+    </Headline>
+    <BlogList posts={posts} />
+  </section>
+</Layout>

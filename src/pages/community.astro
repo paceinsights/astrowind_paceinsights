@@ -1,0 +1,16 @@
+---
+import { type MetaSEO } from '~/types';
+
+const metadata: MetaSEO = {
+  title: 'Pace Insights Community',
+  description: 'Join the Pace Insights AI community on Skool',
+};
+
+// Redirect to Skool community platform
+const COMMUNITY_URL = 'https://www.skool.com/ai-freelancer/about';
+---
+
+<meta http-equiv="refresh" content={`0;url=${COMMUNITY_URL}`} />
+<script define:vars={{ url: COMMUNITY_URL }}>
+  window.location.href = url;
+</script>

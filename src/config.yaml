@@ -9,22 +9,22 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Pace Insights
+    template: '%s — Pace Insights'
+  description: "Your first AI Department. Get strategic guidance, implementation support, and ongoing optimization from your dedicated AI team."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Pace Insights
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@paceinsights'
+    site: '@paceinsights'
     cardType: summary_large_image
 
 i18n:
@@ -38,13 +38,13 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/articles/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       robots:
         index: true
 
     list:
       isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      pathname: 'articles' # Changed from 'blog' to 'articles'
       robots:
         index: true
 
