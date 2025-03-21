@@ -1,30 +1,32 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Features from '~/components/widgets/Features.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import samirImage from '~/assets/images/Samir Abid - Ai Freelancer.png';
 
 const metadata = {
   title: 'Pace Insights - Your First AI Department',
   ignoreTitleTemplate: true,
 };
+
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget -->
-  <Hero
+  <!-- Hero2 Widget ******************* -->
+  <Hero2
+    tagline="AI Department"
     actions={[
-      {
-        variant: 'primary',
-        text: 'AI Healthcheck',
-        href: '/ai-healthcheck',
-        icon: 'tabler:robot',
-      },
+      { variant: 'primary', text: 'AI Healthcheck', href: '/ai-healthcheck', icon: 'tabler:robot' },
       { text: 'Learn more', href: '#features' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'Pace Insights AI Department' }}
+    image={{
+      src: samirImage,
+      alt: 'Samir Abid - AI Department Lead',
+    }}
   >
     <Fragment slot="title">
       Say Hello to your first <span class="text-accent dark:text-white highlight">AI Department</span>
@@ -33,94 +35,144 @@ const metadata = {
     <Fragment slot="subtitle">
       Transform your business with AI expertise on demand. Get strategic guidance, implementation support, and ongoing optimization from your dedicated AI team.
     </Fragment>
-  </Hero>
+  </Hero2>
 
-  <!-- Features Widget -->
+  <!-- Features Widget *************** -->
   <Features
     id="features"
-    title="Why Choose Pace Insights?"
-    subtitle="We combine deep AI expertise with practical business experience to help you succeed in the AI era."
+    title="What We Offer"
+    subtitle="Our AI Department provides comprehensive services to help your business succeed with AI"
+    columns={2}
     items={[
       {
-        title: 'Strategic AI Guidance',
-        description: 'Get expert advice on where and how to implement AI to maximize ROI and competitive advantage.',
+        title: 'AI Strategy Development',
+        description:
+          'Create a roadmap for AI integration that aligns with your business goals and maximizes ROI.',
         icon: 'tabler:bulb',
       },
       {
         title: 'Implementation Support',
-        description: 'From vendor selection to deployment, we ensure your AI initiatives are executed successfully.',
+        description:
+          'Expert guidance in selecting and implementing the right AI solutions for your specific needs.',
         icon: 'tabler:rocket',
       },
       {
         title: 'Ongoing Optimization',
-        description: 'Continuous monitoring and improvement of your AI systems to maintain peak performance.',
-        icon: 'tabler:chart-arrows',
+        description:
+          'Continuous monitoring and refinement of AI systems to ensure optimal performance and results.',
+        icon: 'tabler:arrows-right-left',
       },
       {
-        title: 'Team Training',
-        description: 'Empower your team with the knowledge and skills to work effectively with AI technologies.',
-        icon: 'tabler:users',
+        title: 'Training & Education',
+        description:
+          'Empower your team with the knowledge and skills needed to work effectively with AI technologies.',
+        icon: 'tabler:school',
       },
       {
         title: 'Risk Management',
-        description: 'Ensure responsible AI use with proper governance, security, and ethical considerations.',
-        icon: 'tabler:shield',
+        description:
+          'Ensure responsible AI use with robust risk assessment and mitigation strategies.',
+        icon: 'tabler:shield-check',
       },
       {
-        title: 'Custom Solutions',
-        description: 'Tailored AI solutions that align with your specific business needs and objectives.',
-        icon: 'tabler:puzzle',
+        title: 'Performance Analytics',
+        description:
+          'Track and measure the impact of AI initiatives with comprehensive analytics and reporting.',
+        icon: 'tabler:chart-dots',
       },
     ]}
   />
 
-  <!-- Steps Widget -->
-  <Steps
-    title="Get started with AI in three simple steps"
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Strategic Planning',
+        description:
+          'We work closely with your team to develop a comprehensive AI strategy that aligns with your business objectives.',
+      },
+      {
+        title: 'Implementation',
+        description:
+          'Our experts guide you through the selection and implementation of AI solutions, ensuring smooth integration.',
+      },
+      {
+        title: 'Optimization',
+        description:
+          'Continuous monitoring and refinement of your AI systems to maximize performance and ROI.',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building your AI-Powered Future</h3>
+      Discover how our AI Department can transform your business operations and drive innovation.
+    </Fragment>
+  </Content>
+
+  <!-- Steps2 Widget ****************** -->
+  <Steps2
+    title="Getting Started with AI"
+    subtitle="Follow these steps to begin your AI transformation journey"
     items={[
       {
         title: 'AI Healthcheck',
-        description: 'Begin with our comprehensive assessment of your AI readiness and opportunities.',
+        description:
+          'We assess your current capabilities and identify opportunities for AI integration.',
         icon: 'tabler:clipboard-check',
       },
       {
-        title: 'Strategic Planning',
-        description: 'Develop a tailored roadmap for implementing AI in your business.',
+        title: 'Strategy Development',
+        description:
+          'Together, we create a customized roadmap for implementing AI in your business.',
         icon: 'tabler:map',
       },
       {
         title: 'Implementation',
-        description: 'Execute your AI strategy with our expert guidance and support.',
-        icon: 'tabler:check',
+        description:
+          'Our team helps you select and implement the right AI solutions for your needs.',
+        icon: 'tabler:rocket',
       },
-    ]}
-  />
-
-  <!-- Stats Widget -->
-  <Stats
-    title="Driving AI Success"
-    stats={[
-      { title: 'Happy Clients', amount: '25+' },
-      { title: 'AI Projects', amount: '50+' },
-      { title: 'ROI Generated', amount: '300%+' },
-      { title: 'Team Members', amount: '10+' },
-    ]}
-  />
-
-  <!-- CallToAction Widget -->
-  <CallToAction
-    actions={[
       {
-        variant: 'primary',
-        text: 'Get Your AI Healthcheck',
-        href: '/ai-healthcheck',
-        icon: 'tabler:robot',
+        title: 'Optimization',
+        description:
+          'We continuously monitor and optimize your AI systems for maximum impact.',
+        icon: 'tabler:arrows-right-left',
       },
     ]}
-  >
-    <Fragment slot="title">Ready to transform your business with AI?</Fragment>
-    <Fragment slot="subtitle">
-      Take the first step towards building your AI-powered future. Schedule your AI Healthcheck today.
-    </Fragment>
-  </CallToAction>
+  />
+
+  <!-- FAQs Widget ******************* -->
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Find answers to common questions about implementing AI in your business"
+    items={[
+      {
+        title: 'How do I know if my business is ready for AI?',
+        description:
+          'Our AI Healthcheck helps assess your readiness and identifies the best opportunities for AI implementation.',
+      },
+      {
+        title: 'What kind of ROI can I expect from AI implementation?',
+        description:
+          'ROI varies by project, but we help you identify and track key metrics to measure success.',
+      },
+      {
+        title: 'How long does it take to implement AI solutions?',
+        description:
+          'Implementation timelines vary based on project scope and complexity. We provide detailed timelines during strategy development.',
+      },
+      {
+        title: 'What kind of support do you provide after implementation?',
+        description:
+          'We offer ongoing optimization, monitoring, and support to ensure your AI solutions continue to deliver value.',
+      },
+    ]}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+  <BlogLatestPosts
+    title="Latest Articles"
+    information={`Stay up to date with the latest insights and developments in AI technology and implementation.`}
+  />
 </Layout>
