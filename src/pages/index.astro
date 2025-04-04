@@ -1,178 +1,417 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
-import Features from '~/components/widgets/Features.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-import Content from '~/components/widgets/Content.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import samirImage from '~/assets/images/Samir Abid - Ai Freelancer.png';
 
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQs from '~/components/widgets/FAQs.astro'; // Import the FAQs component
+import { Image } from 'astro:assets'; // Import the Astro Image component
+
+import { headerData } from '~/navigation';
+import { getPermalink } from '~/utils/permalinks';
+
+import samirRaceEngineerImage from '~/assets/images/Samir Abid - Race Engineer.png'; // Updated image import
+import signatureImage from '~/assets/images/Samir Abid public signature.png'; // Import the signature image
+import type { CallToAction as CallToActionType } from '~/types';
+
+// Define Metadata
 const metadata = {
-  title: 'Pace Insights - Your First AI Department',
-  ignoreTitleTemplate: true,
+  title: 'Pace Insights | AI Strategy & Implementation for Business Leaders',
+  description: 'Partner with Pace Insights to confidently adopt AI. We build practical AI tools and strategies, moving beyond hype to deliver real business outcomes. Free AI Healthcheck available.',
+  openGraph: {
+    image: '~/assets/images/Samir Abid - Race Engineer.png',
+  },
 };
+
+// Define actions with proper type annotations
+const heroActions: CallToActionType[] = [
+  {
+    text: 'Get Your Free AI Health Check',
+    href: getPermalink('/ai-healthcheck'),
+    variant: 'primary'
+  }
+];
+
+// Define actions for CallToAction component with proper type annotations
+const ctaActions: CallToActionType[] = [
+  { variant: 'primary', text: 'Take the AI Healthcheck', href: getPermalink('/ai-healthcheck') },
+];
 
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
+  <!-- Header Widget -->
+  <Fragment slot="header">
+    <Header links={headerData.links} actions={headerData.actions} isSticky />
+  </Fragment>
+
+  <!-- Hero Section -->
   <Hero2
-    tagline="AI Department"
-    actions={[
-      { variant: 'primary', text: 'AI Healthcheck', href: '/ai-healthcheck', icon: 'tabler:robot' },
-      { text: 'Learn more', href: '#features' },
-    ]}
+    tagline="Confidently Adopt AI"
+    actions={heroActions}
     image={{
-      src: samirImage,
-      alt: 'Samir Abid - AI Department Lead',
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Samir%20Abid%20-%20Ai%20Examples-cEppZTE9z4DiVC0WUEiRmr66xJcoib.png',
+      alt: 'Professional headshot',
     }}
   >
     <Fragment slot="title">
-      Say Hello to your first <span class="text-accent dark:text-white highlight">AI Department</span>
+      You don’t need to know everything about AI – just <span class="text-primary dark:text-white highlight">where to start.</span>
     </Fragment>
-
     <Fragment slot="subtitle">
-      Transform your business with AI expertise on demand. Get strategic guidance, implementation support, and ongoing optimization from your dedicated AI team.
+      We help business leaders confidently create their AI strategy—by building real tools, not PowerPoints. Motorsport taught us to obsess about achieving more with less. From anxiety to systemic discovery — it would be a pleasure to bring that mindset to your organisation.
     </Fragment>
   </Hero2>
 
-  <!-- Features Widget *************** -->
-  <Features
-    id="features"
-    title="What We Offer"
-    subtitle="Our AI Department provides comprehensive services to help your business succeed with AI"
-    columns={2}
-    items={[
-      {
-        title: 'AI Strategy Development',
-        description:
-          'Create a roadmap for AI integration that aligns with your business goals and maximizes ROI.',
-        icon: 'tabler:bulb',
-      },
-      {
-        title: 'Implementation Support',
-        description:
-          'Expert guidance in selecting and implementing the right AI solutions for your specific needs.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Ongoing Optimization',
-        description:
-          'Continuous monitoring and refinement of AI systems to ensure optimal performance and results.',
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Training & Education',
-        description:
-          'Empower your team with the knowledge and skills needed to work effectively with AI technologies.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Risk Management',
-        description:
-          'Ensure responsible AI use with robust risk assessment and mitigation strategies.',
-        icon: 'tabler:shield-check',
-      },
-      {
-        title: 'Performance Analytics',
-        description:
-          'Track and measure the impact of AI initiatives with comprehensive analytics and reporting.',
-        icon: 'tabler:chart-dots',
-      },
-    ]}
-  />
+  <!-- Open Letter Section -->
+  <section class="py-16 md:py-20 bg-primary-50 dark:bg-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+          An Open Letter to Business Leaders
+        </h2>
+      </div>
+      <div class="prose prose-lg max-w-none dark:prose-invert text-gray-700 dark:text-gray-300 space-y-6">
+        <p>AI isn't like other software.</p>
+        
+        <p>
+          Most people's mental models of what it is, what it does, and where it fits are way off. That's okay—even the toolmakers don't fully understand how it works.
+        </p>
+        
+        <p>
+          But that's not your problem.<br />
+          Your problem—and your opportunity—is how to <i>employ</i> AI.<br />
+          Yes, like digital staff.
+        </p>
+        
+        <p>
+          Generative AI Agents can now do real work.<br />
+          Across departments.<br />
+          24/7.<br />
+          At scale.<br />
+          (And they're basically free.)
+        </p>
+        
+        <p>
+          Forget how it works for a second.<br />
+          Imagine delegating everything you do on a computer—to AI.<br />
+          Even the things you don't do on a computer: strategy, planning, meeting notes...
+        </p>
+        
+        <p>
+          Forget the hype.<br />
+          Forget the buzzwords.<br />
+          Forget "fancy Google."
+        </p>
+        
+        <h4>Ask yourself:</h4>
+        
+        <p>
+          What would that mean for your business?<br />
+          Your team?<br />
+          Your customers?
+        </p>
+        
+        <p>
+          This isn't buying software.<br />
+          It's reimagining how your organisation works.
+        </p>
+        
+        <p>And the tools? They're so simple now that:</p>
+        
+        <blockquote class="italic border-l-4 border-primary pl-4 py-2 my-6 dark:border-primary-600">
+          "The new coding language isn't Python. It's English."
+        </blockquote>
+        
+        <p>
+          Describe what you want—and get it. Instantly.<br />
+          (Yes, for free.)<br />
+          But your competitors can too.
+        </p>
+        
+        <p>
+          So your challenge?<br />
+          It's not technical.<br />
+          It's not IT.
+        </p>
+        
+        <p>It's building:</p>
+        
+        <ul class="list-disc list-inside space-y-1">
+          <li>A clear mental model of what AI actually is</li>
+          <li>A smart starting point (high ROI, low risk)</li>
+          <li>A people-first plan to evolve your culture and workflows</li>
+        </ul>
+        
+        <p>AI is a generational opportunity to reinvent work.</p>
+        
+        <p>
+          Our take?<br />
+          Learn through action.<br />
+          Build real systems.<br />
+          Run experiments.<br />
+          Iterate fast.
+        </p>
+        
+        <p>
+          That mindset comes from motorsports race engineering—where speed and learning win championships.<br />
+          Success with AI takes that same open, curious, competitive spirit.
+        </p>
+        
+        <p>You won't get there through PowerPoint.</p>
+        
+        <p>
+          You need to see it.<br />
+          In action.<br />
+          Inside your business.<br />
+          Doing something that matters.
+        </p>
+        
+        <p>
+          The tools aren't the hard part.<br />
+          Keeping up is:
+        </p>
+        
+        <ul class="list-disc list-inside space-y-1">
+          <li>Daily AI news</li>
+          <li>Evaluating new releases</li>
+          <li>Balancing cost, speed, and quality</li>
+          <li>Staying sharp on implementation methods</li>
+          <li>Engaging with the global builder community</li>
+        </ul>
+        
+        <p>
+          That's our full-time job—because the impact is real.
+        </p>
+        
+        <p>A new AI release can 10x quality or cut costs 100x overnight.</p>
+        
+        <p>You need to stay current—but you've got enough on your plate.</p>
+        
+        <p>
+          So yes—we build tools.<br />
+          Yes—we train teams.<br />
+          Yes—we help you redesign systems.
+        </p>
+        
+        <p>
+          But our real value?<br />
+          We're your AI thinking partner.<br />
+          Trusted. Clear. Outcome-focused.
+        </p>
+        
+        <p>
+          We don't take on many clients.<br />
+          But if this resonates, start with our AI Healthcheck.
+        </p>
+        
+        <p>
+          If we believe we can help, we'll be in touch.
+        </p>
+        
+        <p>
+          And even if it's not with us—ask yourself:<br />
+          What would your business look like if no one needed a screen to get things done?
+        </p>
 
-  <!-- Content Widget **************** -->
+        <!-- Add Signature Image -->
+        <div class="mt-8">
+          <Image 
+            src={signatureImage} 
+            alt="Samir Abid Signature" 
+            width={200} 
+            height={100}  
+            class="max-w-[200px] h-auto" 
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Say Hello Section (Replaces About Me) -->
   <Content
     isReversed
+    tagline="Say Hello"
+    title="Samir Abid, Founder"
     items={[
       {
-        title: 'Strategic Planning',
+        title: 'From Race Engineering to AI Engineering',
         description:
-          'We work closely with your team to develop a comprehensive AI strategy that aligns with your business objectives.',
+          "Hi, I'm Samir. My background isn't in AI—it's in race engineering. We use data, speed, and systems thinking to win. That mindset is exactly what AI needs.",
       },
       {
-        title: 'Implementation',
+        title: 'AI is a Team Sport',
         description:
-          'Our experts guide you through the selection and implementation of AI solutions, ensuring smooth integration.',
+          'Success isn\'t just about tech. It\'s about people, process, and a culture of fast learning. I help businesses bring these together to get real results from AI.',
       },
       {
-        title: 'Optimization',
+        title: 'Let’s Talk Strategy—Not Just Software',
         description:
-          'Continuous monitoring and refinement of your AI systems to maximize performance and ROI.',
+          "If you’re curious how AI could actually work inside your business, try the AI Healthcheck.\nIt’s powered by the same kind of AI agent we build for clients—and it’ll give you insights a consulting firm will typically charge you £35k for.\n\nNo calls. No sales pitch. Just see what’s possible.",
       },
     ]}
+    image={{
+      src: samirRaceEngineerImage, // Use the updated image variable
+      alt: 'Samir Abid - Race Engineer',
+    }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building your AI-Powered Future</h3>
-      Discover how our AI Department can transform your business operations and drive innovation.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">From Motorsports to AI</h3>
+      Bringing a race engineer’s mindset to your business challenges.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- Steps2 Widget ****************** -->
-  <Steps2
-    title="Getting Started with AI"
-    subtitle="Follow these steps to begin your AI transformation journey"
+  <!-- Use Cases Section -->
+  <Features
+    title="AI isn’t just for your IT team. Here’s how AI Agents can enhance performance across your organisation:"
+    columns={2}
     items={[
       {
-        title: 'AI Healthcheck',
+        title: 'Sales',
         description:
-          'We assess your current capabilities and identify opportunities for AI integration.',
-        icon: 'tabler:clipboard-check',
+          '<b>Struggles:</b> Reps spend more time updating CRMs than closing deals. High staff turnover. Inconsistent messaging.<br/><b>AI Agents:</b> AI follow-up assistant, CRM auto-updater, Proposal writer.',
+        icon: 'tabler:chart-bar',
       },
       {
-        title: 'Strategy Development',
+        title: 'Marketing',
         description:
-          'Together, we create a customized roadmap for implementing AI in your business.',
-        icon: 'tabler:map',
+          '<b>Struggles:</b> Content demand outpaces team capacity. Campaigns slow to test. Insights are reactive.<br/><b>AI Agents:</b> Content co-pilot, Campaign performance analyser, Customer sentiment summariser.',
+        icon: 'tabler:speakerphone',
       },
       {
-        title: 'Implementation',
+        title: 'Finance',
         description:
-          'Our team helps you select and implement the right AI solutions for your needs.',
-        icon: 'tabler:rocket',
+          '<b>Struggles:</b> Forecasts outdated quickly. Manual reporting is slow. Limited strategic input.<br/><b>AI Agents:</b> Budget variance explainer, Report generator, Scenario simulator.',
+        icon: 'tabler:calculator',
       },
       {
-        title: 'Optimization',
+        title: 'HR',
         description:
-          'We continuously monitor and optimize your AI systems for maximum impact.',
-        icon: 'tabler:arrows-right-left',
+          '<b>Struggles:</b> CV screening slow. Patchy onboarding. Internal queries waste hours.<br/><b>AI Agents:</b> CV reviewer, Onboarding assistant, Internal HR helpdesk.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Operations',
+        description:
+          '<b>Struggles:</b> Bottlenecks unnoticed. Manual status updates. Costs creep without insight.<br/><b>AI Agents:</b> Ops dashboard summariser, Meeting note taker, Supplier email monitor.',
+        icon: 'tabler:settings-automation',
+      },
+      {
+        title: 'Boardroom / Strategy',
+        description:
+          '<b>Struggles:</b> Too much noise, not enough insight. Change feels overwhelming.<br/><b>AI Agents:</b> Strategic decision support, Competitor tracking, Market trend summariser.',
+        icon: 'tabler:chess-knight',
       },
     ]}
+    classes={{ container: 'py-16 md:py-20' }}
   />
 
-  <!-- FAQs Widget ******************* -->
+  <!-- Subscription Section (Replaces Pricing) -->
+  <section class="py-16 md:py-20 bg-primary-50 dark:bg-slate-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Your AI Department – For a Simple Monthly Subscription</h2>
+      <p class="text-xl text-gray-700 dark:text-gray-300 mb-8">Start small. Start safe. Start with just 5 hours a week.</p>
+      <ul class="text-lg text-gray-700 dark:text-gray-300 space-y-2 text-left inline-block">
+        <li class="flex items-start"><span class="text-green-500 mr-2">✅</span> No long-term contracts – Stay agile and risk-free</li>
+        <li class="flex items-start"><span class="text-green-500 mr-2">⚡</span> Instant AI expertise – No hiring, no overheads, just results</li>
+        <li class="flex items-start"><span class="text-green-500 mr-2">💸</span> Fast ROI – Immediate business improvements with AI-powered efficiencies</li>
+        <li class="flex items-start"><span class="text-green-500 mr-2">📈</span> Flexible scale – Pay only for what you need, scale up or down anytime</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
   <FAQs
     title="Frequently Asked Questions"
-    subtitle="Find answers to common questions about implementing AI in your business"
+    subtitle="Got questions about AI adoption? We've got answers."
     items={[
       {
-        title: 'How do I know if my business is ready for AI?',
+        title: 'What does an AI strategy actually mean for my organisation?',
         description:
-          'Our AI Healthcheck helps assess your readiness and identifies the best opportunities for AI implementation.',
+          'It means knowing where AI fits, what it can realistically do for you, and how to adopt it in a way that supports your team, workflows, and goals. It’s not a 5-year plan—it’s a mindset, a map, and a structured way to start building the future.',
       },
       {
-        title: 'What kind of ROI can I expect from AI implementation?',
+        title: 'Why focus on building tools instead of just talking about strategy?',
         description:
-          'ROI varies by project, but we help you identify and track key metrics to measure success.',
+          'Because clarity comes through doing. We build small, purposeful tools inside your business to test assumptions, build understanding, and identify what works. This isn’t about big-bang digital transformation. It’s about fast feedback and learning by doing.',
       },
       {
-        title: 'How long does it take to implement AI solutions?',
+        title: 'What makes your approach different?',
         description:
-          'Implementation timelines vary based on project scope and complexity. We provide detailed timelines during strategy development.',
+          'We bring a performance mindset from motorsport—where decisions are made under pressure, and experimentation is constant. We help your business move quickly, do more with less, and evolve its systems through deliberate, lightweight tests.',
       },
       {
-        title: 'What kind of support do you provide after implementation?',
+        title: 'How do we deal with how fast this technology is moving?',
         description:
-          'We offer ongoing optimization, monitoring, and support to ensure your AI solutions continue to deliver value.',
+          'We help you build systems that are modular and adaptable. When a better tool comes out next week (and it will), you won’t have to start over—you’ll be able to swap components in and out easily. Flexibility is designed in from day one.',
+      },
+      {
+        title: 'What if we don’t even know where to start?',
+        description:
+          'Perfect. That’s exactly what the AI Healthcheck is for. It helps you understand where you are now, where AI might fit, and how to begin without overcommitting. It’s practical, strategic, and built to remove overwhelm.',
+      },
+      {
+        title: 'Do you offer training for our team?',
+        description:
+          'Yes. We run hands-on workshops called “Talking to Robots”—designed to upskill your team using our AI Literacy Ladder and other frameworks we’ve developed to support confident, structured adoption. These are tailored for leadership, teams, or whole organisations.',
+      },
+      {
+        title: 'Can you help us manage the impact of AI on our people and culture?',
+        description:
+          'Yes. In fact, it’s critical. AI adoption often brings fear, uncertainty, and resistance. From our experience introducing data analytics into Olympic sports teams—where change was initially unwelcome—we know how to guide cultural transformation with care and clarity.',
+      },
+      {
+        title: 'Why do you talk about AI Agents like they’re staff?',
+        description:
+          'Because that’s how they behave. They arrive almost job-ready—but like any new hire, they need onboarding, training, feedback, and clear boundaries. Over time, we evolve their roles, grow your confidence, and even help these agents collaborate with each other as teams. Don’t worry—it sounds scary, but we’re here to look after you.',
+      },
+      {
+        title: 'What kinds of businesses do you work with?',
+        description:
+          'Mostly SMEs and mid-sized organisations in sectors like engineering, education, consulting, and services. What matters most is mindset: curiosity, ambition, and a willingness to experiment and learn.',
+      },
+      {
+        title: 'Is it just you?',
+        description:
+          'Pace Insights is led by me, Samir. But I work with a trusted global network of AI freelancers—the best of whom can be brought in to support your project if needed. You’ll always have a single point of contact, backed by serious expertise.',
+      },
+      {
+        title: 'How do you handle data privacy and security?',
+        description:
+          'We guide you through every choice. You stay in control of your data and tooling, and we help you select the right models, platforms, and architecture based on your needs for privacy, cost, and compliance. We don’t touch anything until you’re comfortable.',
+      },
+      {
+        title: 'How does pricing work?',
+        description:
+          'We offer a simple subscription model starting from just 5 hours a week. No long-term contracts. Scale up or down as needed. You get strategic thinking, fast experimentation, and working tools—all under one roof.',
+      },
+      {
+        title: 'What’s your method—and why do you work this way?',
+        description:
+          'Our approach is built around deliberate experimentation. Every tool or workflow we develop is designed to teach you something—not just work technically, but reveal insight. Sometimes we hit the goal first time. Sometimes we don’t. But we always learn—and learning is the real success. There’s no universal playbook for AI. Our job is to help you distil what matters, avoid the noise, and move forward with confidence.',
+      },
+      {
+        title: 'What does success look like in this kind of work?',
+        description:
+          'In the beginning, success means learning. We treat the first phase of work like a research lab—a place to experiment, explore, and build confidence in both the technology and where it fits within your organisation.\n\nFrom there, we help you scale what works—moving into a factory mindset where AI tools go into broader use across teams. That shift comes with more visibility, higher returns, and sometimes more risk. But by then, you’ll have the capability, culture, and clarity to handle it.\n\nAnd this isn’t “one and done.” Continuous improvement is built into everything we do. Our job is to make sure your business becomes smarter, more adaptable, and more efficient—not just through what we build, but through how we help you think.\n\nWhether you stay with us, grow your own internal capability, or later bring in a larger partner—that’s completely fine. We’re here to get you confidently started and set your business off in the best possible direction.',
       },
     ]}
   />
 
-  <!-- BlogLatestPost Widget **************** -->
-  <BlogLatestPosts
-    title="Latest Articles"
-    information={`Stay up to date with the latest insights and developments in AI technology and implementation.`}
-  />
+  <!-- Soft Close / CTA Banner Section -->
+  <CallToAction
+    title="Ready to Explore What AI Can Really Do?"
+    subtitle="We don’t take on many clients at once. We prefer to work closely, collaboratively, and move fast. If that sounds like you, the best next step is to try the AI Business Healthcheck. It’s free. It’s short. And it’ll give you a much clearer idea of what’s possible."
+    actions={ctaActions}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-primary-50 dark:bg-slate-800"></div>
+    </Fragment>
+  </CallToAction>
+
 </Layout>

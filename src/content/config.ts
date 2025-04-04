@@ -1,6 +1,8 @@
 import { z, defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+import type { Site, Metadata, Socials } from "@types";
+
 const metadataDefinition = () =>
   z
     .object({
@@ -64,6 +66,49 @@ const postCollection = defineCollection({
     metadata: metadataDefinition(),
   }),
 });
+
+export const SITE: Site = {
+  NAME: "Pace Insights",
+  EMAIL: "hello@paceinsights.com",
+  NUM_POSTS_ON_HOMEPAGE: 3,
+  NUM_WORKS_ON_HOMEPAGE: 2,
+  NUM_PROJECTS_ON_HOMEPAGE: 3,
+};
+
+export const HOME: Metadata = {
+  TITLE: "Home",
+  DESCRIPTION: "Pace Insights helps businesses adopt AI effectively using a practical, systems-thinking approach.",
+};
+
+export const BLOG: Metadata = {
+  TITLE: "Blog",
+  DESCRIPTION: "Thoughts and insights on AI adoption, strategy, and implementation from Pace Insights.",
+};
+
+export const WORK: Metadata = {
+  TITLE: "Work",
+  DESCRIPTION: "Examples of how Pace Insights helps businesses implement AI solutions.",
+};
+
+export const PROJECTS: Metadata = {
+  TITLE: "Projects",
+  DESCRIPTION: "Case studies and projects showcasing successful AI adoption strategies.",
+};
+
+export const SOCIALS: Socials = [
+  {
+    NAME: "X (formerly Twitter)",
+    HREF: "https://twitter.com/samirabid",
+  },
+  {
+    NAME: "LinkedIn",
+    HREF: "https://www.linkedin.com/in/samirabid/",
+  },
+  {
+    NAME: "GitHub",
+    HREF: "https://github.com/samirpace",
+  },
+];
 
 export const collections = {
   post: postCollection,

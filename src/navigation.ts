@@ -11,10 +11,11 @@ export const headerData = {
       href: getPermalink('/community'),
     },
   ],
-  actions: [    {
+  actions: [
+    {
       text: 'AI Healthcheck',
       href: getPermalink('/ai-healthcheck'),
-      type: 'primary',
+      variant: 'primary',
     },
   ],
 };

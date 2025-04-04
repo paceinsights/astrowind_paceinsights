@@ -1,108 +1,36 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import Steps from '~/components/widgets/Steps.astro';
+import Header from '~/components/widgets/Header.astro';
+import { headerData } from '~/navigation';
 
+// Define Metadata for the Coming Soon page
 const metadata = {
-  title: 'AI Healthcheck - Assess Your AI Readiness',
-  description: 'Get a comprehensive assessment of your organization\'s AI readiness and discover opportunities for AI implementation.',
+  title: 'AI Healthcheck | Pace Insights - Coming Soon',
+  description: 'The Pace Insights AI Healthcheck service is launching soon. Check back for updates!',
+  robots: { // Discourage search engines from indexing this temporary page
+    index: false,
+    follow: false,
+  },
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget -->
-  <Hero
-    title="AI Healthcheck"
-    subtitle="Discover your organization's AI potential with our comprehensive assessment"
-    image={{ 
-      src: '~/assets/images/hero-image.png',
-      alt: 'AI Healthcheck Assessment'
-    }}
-  >
-    <Fragment slot="subtitle">
-      Our AI Healthcheck is a thorough assessment of your organization's AI readiness. 
-      We evaluate your current capabilities, identify opportunities, and provide actionable recommendations 
-      for implementing AI solutions that drive real business value.
-    </Fragment>
-  </Hero>
+  <!-- Header Widget -->
+  <Fragment slot="header">
+    <Header links={headerData.links} actions={headerData.actions} isSticky />
+  </Fragment>
 
-  <!-- Features Widget -->
-  <Features
-    title="What's Included in Your AI Healthcheck?"
-    subtitle="A comprehensive evaluation of your organization's AI readiness across key dimensions"
-    items={[
-      {
-        title: 'Technical Infrastructure',
-        description: 'Assessment of your current systems, data architecture, and technical capabilities.',
-        icon: 'tabler:server',
-      },
-      {
-        title: 'Data Readiness',
-        description: 'Evaluation of your data quality, accessibility, and governance practices.',
-        icon: 'tabler:database',
-      },
-      {
-        title: 'Process Analysis',
-        description: 'Review of business processes to identify AI automation opportunities.',
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Skills Assessment',
-        description: 'Evaluation of your team\'s current AI capabilities and training needs.',
-        icon: 'tabler:users',
-      },
-      {
-        title: 'ROI Potential',
-        description: 'Analysis of potential return on investment for AI implementations.',
-        icon: 'tabler:chart-bar',
-      },
-      {
-        title: 'Risk Assessment',
-        description: 'Identification of potential risks and compliance considerations.',
-        icon: 'tabler:shield',
-      },
-    ]}
-  />
-
-  <!-- Steps Widget -->
-  <Steps
-    title="The AI Healthcheck Process"
-    items={[
-      {
-        title: 'Initial Consultation',
-        description: 'A detailed discussion to understand your business objectives and current challenges.',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Assessment',
-        description: 'Thorough evaluation of your organization across all key dimensions.',
-        icon: 'tabler:clipboard-check',
-      },
-      {
-        title: 'Analysis',
-        description: 'Expert analysis of findings and development of recommendations.',
-        icon: 'tabler:chart-dots',
-      },
-      {
-        title: 'Report & Roadmap',
-        description: 'Detailed report with findings and a customized AI implementation roadmap.',
-        icon: 'tabler:map',
-      },
-    ]}
-  />
-
-  <!-- Contact Form - Placeholder -->
-  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-    <div class="mb-10 text-center">
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Schedule Your AI Healthcheck</h2>
-      <p class="mt-4 text-lg">
-        Get started with your AI transformation journey today. Complete the form below and we'll be in touch within 24 hours.
+  <!-- Coming Soon Content -->
+  <section class="flex items-center justify-center min-h-[calc(100vh-100px)] text-center">
+    <div class="px-4 sm:px-6">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+        AI Healthcheck - Coming Soon!
+      </h1>
+      <p class="text-xl text-muted mb-8">
+        We're putting the finishing touches on our AI Healthcheck service.
+        <br />It will be available soon to help you assess your AI readiness.
       </p>
+      <a href="/" class="btn btn-primary">Back to Homepage</a>
     </div>
-    <!-- Note: Replace with actual form implementation -->
-    <p class="text-center text-gray-600">
-      Form implementation coming soon. For now, please contact us at contact@paceinsights.com
-    </p>
-  </div>
+  </section>
 </Layout>
