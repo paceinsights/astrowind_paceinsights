@@ -16,6 +16,7 @@ import { getPermalink } from '~/utils/permalinks';
 import samirRaceEngineerImage from '~/assets/images/Samir Abid - Race Engineer.png'; // Updated image import
 import signatureImage from '~/assets/images/Samir Abid public signature.png'; // Import the signature image
 import ogImage from '~/assets/images/Pace Insights - Ai Strategy built.png'; // Import Open Graph image
+import aiExamplesImage from '~/assets/images/Samir Abid - Ai Freelancer.png'; // Import AI examples image
 import type { CallToAction as CallToActionType } from '~/types';
 
 // Define Metadata
@@ -59,7 +60,7 @@ const ctaActions: CallToActionType[] = [
     tagline="Applied AI"
     actions={heroActions}
     image={{
-      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Samir%20Abid%20-%20Ai%20Examples-cEppZTE9z4DiVC0WUEiRmr66xJcoib.png',
+      src: aiExamplesImage,
       alt: 'Professional headshot',
     }}
   >
@@ -307,95 +308,85 @@ const ctaActions: CallToActionType[] = [
   <!-- What AI Actually Does Section -->
   <Steps
     title="What AI can actually do for your business"
-    subtitle="Today, in practice. (Remember: You can have these in days not months)"
+    subtitle="Real-world examples you can start iterating in days –not months."
     items={[
       {
-        title: '💬 Language + Communication',
+        title: 'AI That <i>Thinks</i> With You',
         description: `
+          <p class="font-semibold mb-2">For clearer decisions, faster insights, and sharper communication.</p>
+          
+          <h4 class="font-bold text-lg mt-4 mb-2">💬 Language & Communication</h4>
           <ul class="list-disc list-inside space-y-1">
-            <li>Writes first drafts, emails, reports, slide content</li>
-            <li>Translates between languages, tones, and levels of expertise</li>
-            <li>Summarises meetings, documents, articles</li>
+            <li>Drafts emails, reports, presentations, and posts</li>
+            <li>Translates across tone, language, and expertise</li>
+            <li>Summarises meetings, documents, and articles</li>
             <li>Prepares talking points and personalised responses</li>
           </ul>
-        `,
-        icon: 'tabler:message-circle',
-      },
-      {
-        title: '🧠 Thinking Partner / Co-Creation',
-        description: `
+          
+          <h4 class="font-bold text-lg mt-4 mb-2">🔍 Research & Insight</h4>
           <ul class="list-disc list-inside space-y-1">
-            <li>Supports decision-making with analysis + framing</li>
-            <li>Challenges assumptions, asks smart questions (if prompted well)</li>
-            <li>Explores multiple perspectives quickly</li>
-            <li>Helps develop frameworks, positioning, strategies</li>
+            <li>Synthesises public and internal information</li>
+            <li>Surfaces patterns, trends, and opportunities</li>
+            <li>Tracks competitors and market shifts</li>
+            <li>Reduces time-to-understanding across roles</li>
+          </ul>
+          
+          <h4 class="font-bold text-lg mt-4 mb-2">🧠 Strategy Co-Creation</h4>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Helps structure decisions and explore new directions</li>
+            <li>Challenges assumptions and reframes problems</li>
+            <li>Develops frameworks, messaging, and positioning</li>
+            <li>Acts as a strategic thinking partner when you need one</li>
           </ul>
         `,
         icon: 'tabler:brain',
       },
       {
-        title: '📊 Research + Insight',
+        title: 'AI That <i>Works</i> For You',
         description: `
+          <p class="font-semibold mb-2">For automation, scale, and always-on support that evolves with your business.</p>
+          
+          <h4 class="font-bold text-lg mt-4 mb-2">🧭 Agentic AI Systems</h4>
           <ul class="list-disc list-inside space-y-1">
-            <li>Gathers and synthesises public information</li>
-            <li>Pulls insights from internal data or documents</li>
-            <li>Finds patterns, anomalies, and potential opportunities</li>
-            <li>Tracks competitors, markets, or trends continuously</li>
+            <li>Content creator – writes posts, emails, internal comms</li>
+            <li>Email triage assistant – drafts replies, sorts, and tags inboxes</li>
+            <li>Report writer – builds summaries from your live data</li>
+            <li>Customer service agent – answers questions using company knowledge</li>
+            <li>Sales support agent – enriches leads, follows up, tracks pipeline</li>
+            <li>Analytics generator – turns raw data into visual insights</li>
+            <li>Project planner – creates structured plans and timelines</li>
+            <li>Calendar assistant – books meetings, sends reminders, follows up</li>
           </ul>
-        `,
-        icon: 'tabler:chart-pie',
-      },
-      {
-        title: '⚙️ Workflow + Automation',
-        description: `
+          
+          <h4 class="font-bold text-lg mt-4 mb-2">📚 Knowledge-as-a-Service</h4>
           <ul class="list-disc list-inside space-y-1">
-            <li>Runs repetitive or logic-based tasks across tools</li>
-            <li>Sends, formats, tags, and routes information across systems (e.g. CRM, email, Notion)</li>
-            <li>Executes complex logic (e.g. scoring leads, enriching profiles)</li>
-            <li>Creates and updates content or reports on autopilot</li>
+            <li>"Talk to your PDFs" and internal documents</li>
+            <li>Internal GPTs trained on your data</li>
+            <li>Turns SOPs and reports into searchable systems</li>
+            <li>Onboards staff faster and improves consistency</li>
+          </ul>
+          
+          <h4 class="font-bold text-lg mt-4 mb-2">🧱 Tool & Product Building</h4>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Builds working apps, dashboards, and prototypes</li>
+            <li>Writes and maintains internal tools and code</li>
+            <li>Extends legacy systems with new interfaces</li>
+            <li>Supports fast experimentation before dev investment</li>
+          </ul>
+          
+          <h4 class="font-bold text-lg mt-4 mb-2">🤖 Workflow Automation</h4>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Routes data between tools (CRM, Notion, Slack, Email, etc.)</li>
+            <li>Triggers actions from events (e.g. lead created → email sent)</li>
+            <li>Formats, tags, and distributes content</li>
+            <li>Enriches records, syncs reports, updates dashboards</li>
+            <li>Creates dependable, multi-step automations</li>
           </ul>
         `,
         icon: 'tabler:settings-automation',
       },
-      {
-        title: '🛠️ Product + Engineering',
-        description: `
-          <ul class="list-disc list-inside space-y-1">
-            <li>Writes code, scripts, tests, and documentation</li>
-            <li>Generates UIs, automations, and full working prototypes</li>
-            <li>Maintains or updates legacy code with contextual prompts</li>
-            <li>Acts as a thinking partner for architecture/design decisions</li>
-          </ul>
-        `,
-        icon: 'tabler:code',
-      },
-      {
-        title: '📚 Knowledge Management',
-        description: `
-          <ul class="list-disc list-inside space-y-1">
-            <li>Turns messy docs into clean, searchable knowledge bases</li>
-            <li>Answers staff/customer questions instantly using company IP</li>
-            <li>Onboards new team members faster (internal GPTs etc.)</li>
-            <li>Ensures consistent advice or support across the org</li>
-          </ul>
-        `,
-        icon: 'tabler:book',
-      },
-      {
-        title: '💼 Sales, Marketing + Ops',
-        description: `
-          <ul class="list-disc list-inside space-y-1">
-            <li>Writes outbound campaigns, follow-ups, and social content</li>
-            <li>Scores, qualifies, and routes leads</li>
-            <li>Tracks deal progress or renewals</li>
-            <li>Produces marketing assets at speed (copy, images, even video)</li>
-            <li>Connects data across systems (CRM, analytics, web forms)</li>
-          </ul>
-        `,
-        icon: 'tabler:briefcase',
-      },
     ]}
-    classes={{ container: 'max-w-3xl mx-auto' }}
+    classes={{ container: 'max-w-4xl mx-auto' }}
   />
 
   <!-- Subscription Section (Replaces Pricing) -->
