@@ -36,12 +36,14 @@ export const footerData = {
         { text: 'About', href: getPermalink('/about') },
         { text: 'Privacy Policy', href: getPermalink('/privacy') },
         { text: 'Terms', href: getPermalink('/terms') },
+        { text: 'Cookie Policy', href: getPermalink('/cookie-policy') },
       ],
     },
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Cookie Policy', href: getPermalink('/cookie-policy') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
