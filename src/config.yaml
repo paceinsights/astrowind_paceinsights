@@ -1,6 +1,6 @@
 site:
   name: Pace Insights
-  site: 'https://astrowind.vercel.app'
+  site: 'https://paceinsights.com'
   base: '/'
   trailingSlash: false
 
