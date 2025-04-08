@@ -5,6 +5,7 @@ import Header from '~/components/widgets/Header.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro'; // Import the Steps component
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FAQs from '~/components/widgets/FAQs.astro'; // Import the FAQs component
 import { Image } from 'astro:assets'; // Import the Astro Image component
@@ -49,7 +50,7 @@ const ctaActions: CallToActionType[] = [
 
   <!-- Hero Section -->
   <Hero2
-    tagline="Confidently Adopt AI"
+    tagline="Applied AI"
     actions={heroActions}
     image={{
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Samir%20Abid%20-%20Ai%20Examples-cEppZTE9z4DiVC0WUEiRmr66xJcoib.png',
@@ -57,10 +58,12 @@ const ctaActions: CallToActionType[] = [
     }}
   >
     <Fragment slot="title">
-      You don’t need to know everything about AI – just <span class="text-primary dark:text-white highlight">where to start.</span>
+      AI Strategy. <span class="text-primary dark:text-white highlight"><br>Built, not theorised.</span>
     </Fragment>
     <Fragment slot="subtitle">
-      We help business leaders confidently create their AI strategy—by building real tools, not PowerPoints. Motorsport taught us to obsess about achieving more with less. From anxiety to systemic discovery — it would be a pleasure to bring that mindset to your organisation.
+      You don't need to know everything about AI—<strong>just where to start.</strong>
+      <br /><br />Imagine feeling completely confident in how to apply this technology across your whole organisation.
+      <br /><br />We act as <strong>your AI department</strong>, your strategic thinking partner—but building you real tools, not slide decks.
     </Fragment>
   </Hero2>
 
@@ -255,49 +258,138 @@ const ctaActions: CallToActionType[] = [
     </Fragment>
   </Content>
 
-  <!-- Use Cases Section -->
+  <!-- Mental Models Section -->
   <Features
-    title="AI isn’t just for your IT team. Here’s how AI Agents can enhance performance across your organisation:"
-    columns={2}
+    title="Mental Models for Thinking About AI"
+    subtitle="Different ways to position AI in your organisation"
+    highlight="mental models"
+    columns={3}
     items={[
       {
-        title: 'Sales',
-        description:
-          '<b>Struggles:</b> Reps spend more time updating CRMs than closing deals. High staff turnover. Inconsistent messaging.<br/><b>AI Agents:</b> AI follow-up assistant, CRM auto-updater, Proposal writer.',
-        icon: 'tabler:chart-bar',
+        title: 'Digital Team Member',
+        description: 'Like hiring a smart, fast junior who never sleeps',
+        icon: 'tabler:user-plus',
       },
       {
-        title: 'Marketing',
-        description:
-          '<b>Struggles:</b> Content demand outpaces team capacity. Campaigns slow to test. Insights are reactive.<br/><b>AI Agents:</b> Content co-pilot, Campaign performance analyser, Customer sentiment summariser.',
-        icon: 'tabler:speakerphone',
+        title: 'Analyst-on-Demand',
+        description: 'Pull insight from chaos without hours of prep',
+        icon: 'tabler:chart-dots',
       },
       {
-        title: 'Finance',
-        description:
-          '<b>Struggles:</b> Forecasts outdated quickly. Manual reporting is slow. Limited strategic input.<br/><b>AI Agents:</b> Budget variance explainer, Report generator, Scenario simulator.',
-        icon: 'tabler:calculator',
+        title: 'Co-Pilot',
+        description: 'Helps you think, write, and decide faster',
+        icon: 'tabler:plane',
       },
       {
-        title: 'HR',
-        description:
-          '<b>Struggles:</b> CV screening slow. Patchy onboarding. Internal queries waste hours.<br/><b>AI Agents:</b> CV reviewer, Onboarding assistant, Internal HR helpdesk.',
-        icon: 'tabler:users',
+        title: 'Process Layer',
+        description: 'Connects your tools and knowledge into a working system',
+        icon: 'tabler:layers-intersect',
       },
       {
-        title: 'Operations',
-        description:
-          '<b>Struggles:</b> Bottlenecks unnoticed. Manual status updates. Costs creep without insight.<br/><b>AI Agents:</b> Ops dashboard summariser, Meeting note taker, Supplier email monitor.',
+        title: 'Capability Amplifier',
+        description: 'Multiplies what your team can achieve',
+        icon: 'tabler:volume',
+      },
+      {
+        title: 'Time-to-Result Reducer',
+        description: 'Compresses the distance between idea and action',
+        icon: 'tabler:clock',
+      },
+    ]}
+  />
+
+  <!-- What AI Actually Does Section -->
+  <Steps
+    title="🔧 What AI actually does for a business"
+    subtitle="Today, in practice"
+    items={[
+      {
+        title: '💬 Language + Communication',
+        description: `
+          <ul class="list-disc list-inside space-y-1">
+            <li>Writes first drafts, emails, reports, slide content</li>
+            <li>Translates between languages, tones, and levels of expertise</li>
+            <li>Summarises meetings, documents, articles</li>
+            <li>Prepares talking points and personalised responses</li>
+          </ul>
+        `,
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: '🧠 Thinking Partner / Co-Creation',
+        description: `
+          <ul class="list-disc list-inside space-y-1">
+            <li>Supports decision-making with analysis + framing</li>
+            <li>Challenges assumptions, asks smart questions (if prompted well)</li>
+            <li>Explores multiple perspectives quickly</li>
+            <li>Helps develop frameworks, positioning, strategies</li>
+          </ul>
+        `,
+        icon: 'tabler:brain',
+      },
+      {
+        title: '📊 Research + Insight',
+        description: `
+          <ul class="list-disc list-inside space-y-1">
+            <li>Gathers and synthesises public information</li>
+            <li>Pulls insights from internal data or documents</li>
+            <li>Finds patterns, anomalies, and potential opportunities</li>
+            <li>Tracks competitors, markets, or trends continuously</li>
+          </ul>
+        `,
+        icon: 'tabler:chart-pie',
+      },
+      {
+        title: '⚙️ Workflow + Automation',
+        description: `
+          <ul class="list-disc list-inside space-y-1">
+            <li>Runs repetitive or logic-based tasks across tools</li>
+            <li>Sends, formats, tags, and routes information across systems (e.g. CRM, email, Notion)</li>
+            <li>Executes complex logic (e.g. scoring leads, enriching profiles)</li>
+            <li>Creates and updates content or reports on autopilot</li>
+          </ul>
+        `,
         icon: 'tabler:settings-automation',
       },
       {
-        title: 'Boardroom / Strategy',
-        description:
-          '<b>Struggles:</b> Too much noise, not enough insight. Change feels overwhelming.<br/><b>AI Agents:</b> Strategic decision support, Competitor tracking, Market trend summariser.',
-        icon: 'tabler:chess-knight',
+        title: '🛠️ Product + Engineering',
+        description: `
+          <ul class="list-disc list-inside space-y-1">
+            <li>Writes code, scripts, tests, and documentation</li>
+            <li>Generates UIs, automations, and full working prototypes</li>
+            <li>Maintains or updates legacy code with contextual prompts</li>
+            <li>Acts as a thinking partner for architecture/design decisions</li>
+          </ul>
+        `,
+        icon: 'tabler:code',
+      },
+      {
+        title: '📚 Knowledge Management',
+        description: `
+          <ul class="list-disc list-inside space-y-1">
+            <li>Turns messy docs into clean, searchable knowledge bases</li>
+            <li>Answers staff/customer questions instantly using company IP</li>
+            <li>Onboards new team members faster (internal GPTs etc.)</li>
+            <li>Ensures consistent advice or support across the org</li>
+          </ul>
+        `,
+        icon: 'tabler:book',
+      },
+      {
+        title: '💼 Sales, Marketing + Ops',
+        description: `
+          <ul class="list-disc list-inside space-y-1">
+            <li>Writes outbound campaigns, follow-ups, and social content</li>
+            <li>Scores, qualifies, and routes leads</li>
+            <li>Tracks deal progress or renewals</li>
+            <li>Produces marketing assets at speed (copy, images, even video)</li>
+            <li>Connects data across systems (CRM, analytics, web forms)</li>
+          </ul>
+        `,
+        icon: 'tabler:briefcase',
       },
     ]}
-    classes={{ container: 'py-16 md:py-20' }}
+    classes={{ container: 'max-w-3xl mx-auto' }}
   />
 
   <!-- Subscription Section (Replaces Pricing) -->
