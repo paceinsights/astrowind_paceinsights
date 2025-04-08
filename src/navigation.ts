@@ -30,24 +30,14 @@ export const footerData = {
         { text: 'Community', href: getPermalink('/community') },
       ],
     },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: getPermalink('/about') },
-        { text: 'Privacy Policy', href: getPermalink('/privacy') },
-        { text: 'Terms', href: getPermalink('/terms') },
-        { text: 'Cookie Policy', href: getPermalink('/cookie-policy') },
-      ],
-    },
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
-    { text: 'Cookie Policy', href: getPermalink('/cookie-policy') },
+    { text: 'Privacy', href: getPermalink('/privacy') },
+    { text: 'Cookie', href: getPermalink('/cookie-policy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/samirabid/' },
   ],
   footNote: `
     <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm"></span>
