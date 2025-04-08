@@ -399,16 +399,20 @@ const ctaActions: CallToActionType[] = [
   />
 
   <!-- Subscription Section (Replaces Pricing) -->
-  <section class="py-16 md:py-20 bg-primary-50 dark:bg-slate-800">
+  <section class="py-16 md:py-20 bg-blue-50 dark:bg-transparent">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Your AI Department – For a Simple Monthly Subscription</h2>
       <p class="text-xl text-gray-700 dark:text-gray-300 mb-8">Start small. Start safe. Start with just 5 hours a week.</p>
-      <ul class="text-lg text-gray-700 dark:text-gray-300 space-y-2 text-left inline-block">
+      <ul class="text-lg text-gray-700 dark:text-gray-300 space-y-2 text-left inline-block mb-8">
         <li class="flex items-start"><span class="text-green-500 mr-2">✅</span> No long-term contracts – Stay agile and risk-free</li>
         <li class="flex items-start"><span class="text-green-500 mr-2">⚡</span> Instant AI expertise – No hiring, no overheads, just results</li>
         <li class="flex items-start"><span class="text-green-500 mr-2">💸</span> Fast ROI – Immediate business improvements with AI-powered efficiencies</li>
         <li class="flex items-start"><span class="text-green-500 mr-2">📈</span> Flexible scale – Pay only for what you need, scale up or down anytime</li>
       </ul>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={getPermalink('/ai-healthcheck')} class="btn btn-primary">Take the AI Healthcheck</a>
+        <a href="mailto:info@paceinsights.com" class="btn btn-secondary">Email Samir</a>
+      </div>
     </div>
   </section>
 
