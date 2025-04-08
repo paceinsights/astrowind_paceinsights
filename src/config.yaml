@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Pace Insights
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/Pace Insights - Ai Strategy built.png'
         width: 1200
         height: 628
     type: website
