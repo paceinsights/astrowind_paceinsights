@@ -17,6 +17,7 @@ import wbsLogo from '../assets/images/client_image/WBS-logo.png';
 import wwaLogo from '../assets/images/client_image/WWA-logo.png';
 import britishEquestrianLogo from '../assets/images/client_image/british_equestrian_federation.png';
 import visLogo from '../assets/images/client_image/vis_orig.png';
+import astonMartinLogo from '../assets/images/client_image/Aston-Martin-Logo.png';
 
 // Define component props
 interface Props {
@@ -30,6 +31,7 @@ const {
 
 // Define the logos array - you can safely comment out or remove any logos you don't want to show
 const logos = [
+  { src: astonMartinLogo, alt: 'Aston Martin' },
   { src: britishAthleticsLogo, alt: 'British Athletics' },
   { src: britishSailingLogo, alt: 'British Sailing' },
   { src: britishSwimmingLogo, alt: 'British Swimming' },
@@ -45,6 +47,7 @@ const logos = [
   { src: britishEquestrianLogo, alt: 'British Equestrian Federation' },
   { src: visLogo, alt: 'VIS' },
 ];
+
 ---
 
 <section class="relative w-full overflow-hidden py-8 bg-white dark:bg-slate-900">
