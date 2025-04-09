@@ -3,9 +3,9 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Header from '~/components/widgets/Header.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro'; // Import the Features2 component
+import Steps3 from '~/components/widgets/Steps3.astro'; // Import the Steps3 component
 import Steps from '~/components/widgets/Steps.astro'; // Import the Steps component
+import Features2 from '~/components/widgets/Features2.astro'; // Import the Features2 component
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FAQs from '~/components/widgets/FAQs.astro'; // Import the FAQs component
 import { Image } from 'astro:assets'; // Import the Astro Image component
@@ -231,41 +231,35 @@ const ctaActions: CallToActionType[] = [
   </section>
 
   <!-- Say Hello Section (Replaces About Me) -->
-  <Content
-    isReversed
+  <Steps3
     tagline="Say Hello"
     title="Samir Abid, Founder"
+    subtitle="From Race Engineering to AI Strategy"
     items={[
       {
-        title: 'From Race Engineering to AI Strategy', 
+        title: 'My Background', 
         description:
-          "Hi, I'm Samir. I've spent 20+ years solving complex problems across elite sport, engineering, and business—helping Olympic teams, motorsport drivers, and companies turn data into performance. I hold an MBA from Warwick (where I teach), and I've built and sold digital products, run my own consultancy, and helped organisations make smarter decisions with technology.",
+          "Hi, I'm Samir. I've spent 20+ years solving complex problems across elite sport, engineering, and business. I've helped Olympic teams, motorsport drivers, and companies turn data into performance. I hold an MBA from Warwick (where I teach), and I've built and sold digital products, run my own consultancy, and helped organisations make smarter decisions with technology.",
+        icon: "tabler:user",
       },
       {
         title: 'My AI Journey',
         description:
           "When I first saw what AI could do, I didn't sleep for three days. As a natural sceptic, I had to see for myself—especially after spending nine months building an educational product that, if the hype was true, could be made redundant overnight. That moment kicked off a two-year journey. In late 2024, I doubled down—delegating large parts of my motorsports academy (marketing, sales, operations) to AI.",
+        icon: "tabler:rocket",
       },
       { 
         title: 'Try it for yourself',
         description:
-          "Now, as I help others \"AI-ify\" their businesses, I'm acutely aware of the impact this tech will have on people. You should be too. It's a superpower hiding in plain sight. The best way to understand it? Try it. Build something. Apply it to your world—and see how it feels. And remember: AI today is the worst it will ever be.",
+          "Now, as I help others \"AI-ify\" their businesses, I'm acutely aware of the impact this tech will have on people. You should be too. It's a superpower hiding in plain sight. The best way to understand it? Try it. Build something. Apply it to your world—and see how it feels. And remember: <strong>AI today is the worst it will ever be.</strong>",
+        icon: "tabler:bulb",
       },
     ]}
     image={{
       src: samirRaceEngineerImage, 
       alt: 'Samir Abid - Race Engineer',
     }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">From Motorsports to AI</h3>
-      Bringing a race engineer's mindset to business challenges.
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  />
 
   <!-- How This Works Section -->
   <Features2
