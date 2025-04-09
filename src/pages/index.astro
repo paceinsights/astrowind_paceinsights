@@ -4,7 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
-import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro'; // Import the Features2 component
 import Steps from '~/components/widgets/Steps.astro'; // Import the Steps component
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FAQs from '~/components/widgets/FAQs.astro'; // Import the FAQs component
@@ -267,42 +267,28 @@ const ctaActions: CallToActionType[] = [
     </Fragment>
   </Content>
 
-  <!-- Mental Models Section -->
-  <Features
-    title="Mental Models for Thinking About AI"
-    subtitle="Different ways to position AI in your organisation"
-    highlight="mental models"
-    columns={3}
+  <!-- How This Works Section -->
+  <Features2
+    title="How This Works"
+    subtitle="We develop strategy by building—tools, momentum, and your confidence. Start with one working project and grow from there."
     items={[
       {
-        title: 'Digital Team Member',
-        description: 'Like hiring a smart, fast junior who never sleeps',
-        icon: 'tabler:user-plus',
+        title: "🧭 Start With Clarity",
+        description:
+          `Kick off with an AI Health Check or 'Talking to Robots' workshop to map out opportunities and assess where you're ready to act.`,
+        icon: "tabler:compass",
       },
       {
-        title: 'Analyst-on-Demand',
-        description: 'Pull insight from chaos without hours of prep',
-        icon: 'tabler:chart-dots',
+        title: "⚙️ Build to Learn",
+        description:
+          `Pick one project and create something real. Success = a working tool that adds value and sharpens your thinking.`,
+        icon: "tabler:settings",
       },
       {
-        title: 'Co-Pilot',
-        description: 'Helps you think, write, and decide faster',
-        icon: 'tabler:plane',
-      },
-      {
-        title: 'Process Layer',
-        description: 'Connects your tools and knowledge into a working system',
-        icon: 'tabler:layers-intersect',
-      },
-      {
-        title: 'Capability Amplifier',
-        description: 'Multiplies what your team can achieve',
-        icon: 'tabler:volume',
-      },
-      {
-        title: 'Time-to-Result Reducer',
-        description: 'Compresses the distance between idea and action',
-        icon: 'tabler:clock',
+        title: "🔄 Refine and Repeat",
+        description: 
+          `Each project reveals what's next. Iterate, expand, or scale—one smart step at a time.`,
+        icon: "tabler:repeat",
       },
     ]}
   />
