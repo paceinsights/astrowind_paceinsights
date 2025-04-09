@@ -9,6 +9,7 @@ import Features2 from '~/components/widgets/Features2.astro'; // Import the Feat
 import LogoMarquee from '~/components/LogoMarquee.astro'; // Import the LogoMarquee component
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FAQs from '~/components/widgets/FAQs.astro'; // Import the FAQs component
+import Testimonials from '~/components/widgets/Testimonials.astro'; // Import the Testimonials component
 import { Image } from 'astro:assets'; // Import the Astro Image component
 
 import { headerData } from '~/navigation';
@@ -18,6 +19,12 @@ import samirRaceEngineerImage from '~/assets/images/Samir Abid - Race Engineer.p
 import signatureImage from '~/assets/images/Samir Abid public signature.png'; // Import the signature image
 import ogImage from '~/assets/images/Pace Insights - Ai Strategy built.png'; // Import Open Graph image
 import aiExamplesImage from '~/assets/images/Samir Abid - Ai Freelancer.png'; // Import AI examples image
+
+// Import testimonial images
+import jeffBraunImage from '~/assets/images/people_images/Jeff_Braun.png';
+import tomRobertsImage from '~/assets/images/people_images/Tom_Roberts.png';
+import angusLemonImage from '~/assets/images/people_images/Angus_Lemon.png';
+
 import type { CallToAction as CallToActionType } from '~/types';
 
 // Define Metadata
@@ -265,6 +272,41 @@ const ctaActions: CallToActionType[] = [
       src: samirRaceEngineerImage, 
       alt: 'Samir Abid - Race Engineer',
     }}
+  />
+
+  <!-- Testimonials Section -->
+  <Testimonials
+    title="What People Say"
+    subtitle="Feedback from clients and partners"
+    testimonials={[
+      {
+        testimonial: "Are you kidding me Samir, you're selling this! This ticks all the boxes. It will be a big help. Please just don't tell anyone, I need every advantage I can get!",
+        name: "Jeff Braun",
+        job: "Race Engineer",
+        image: {
+          src: jeffBraunImage,
+          alt: "Jeff Braun"
+        }
+      },
+      {
+        testimonial: "Wow, that Samir sure knows his stuff. And his presentation style is fantastic – his authority around the topic comes through without being condescending.",
+        name: "Tom Roberts",
+        job: "Business Leader",
+        image: {
+          src: tomRobertsImage,
+          alt: "Tom Roberts"
+        }
+      },
+      {
+        testimonial: "I loved the approach of focusing on the process of experimentation rather than simply giving us an answer. It's like the saying, 'teach a man to fish.' Great!",
+        name: "Angus Lemon",
+        job: "Team Manager",
+        image: {
+          src: angusLemonImage,
+          alt: "Angus Lemon"
+        }
+      }
+    ]}
   />
 
   <!-- How This Works Section -->
