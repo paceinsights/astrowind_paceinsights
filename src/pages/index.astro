@@ -6,6 +6,7 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Steps3 from '~/components/widgets/Steps3.astro'; // Import the Steps3 component
 import Steps from '~/components/widgets/Steps.astro'; // Import the Steps component
 import Features2 from '~/components/widgets/Features2.astro'; // Import the Features2 component
+import LogoMarquee from '~/components/LogoMarquee.astro'; // Import the LogoMarquee component
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FAQs from '~/components/widgets/FAQs.astro'; // Import the FAQs component
 import { Image } from 'astro:assets'; // Import the Astro Image component
@@ -73,6 +74,11 @@ const ctaActions: CallToActionType[] = [
       <br /><br />We’re an <strong>applied strategy firm</strong> with a race-engineering mindset—building <i>working tools</i> (not slide decks!) that help you reimagine how your organisation thinks, works, and succeeds with AI.
     </Fragment>
   </Hero2>
+
+  <!-- Logo Marquee Section -->
+  <LogoMarquee 
+    label="Trusted by world-class teams - not just for AI."
+  />
 
   <!-- Open Letter Section -->
   <section id="open-letter" class="py-16 md:py-20 bg-primary-50 dark:bg-slate-800">

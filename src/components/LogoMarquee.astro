@@ -1,0 +1,151 @@
+---
+// Import the Image component from Astro for proper image handling
+import { Image } from 'astro:assets';
+
+// Import all client logos
+import britishAthleticsLogo from '../assets/images/client_image/British Athletics.png';
+import britishSailingLogo from '../assets/images/client_image/British_Sailing.png';
+import britishSwimmingLogo from '../assets/images/client_image/British_Swimming.png';
+import eisLogo from '../assets/images/client_image/EIS.png';
+import gbBoxingLogo from '../assets/images/client_image/GB-Boxing.png';
+import gbRowingLogo from '../assets/images/client_image/GB-Rowing.png';
+import ineosLogo from '../assets/images/client_image/INEOS-159.png';
+import multimaticLogo from '../assets/images/client_image/Multimatic_MOTORSPORTS.png';
+import paralympicsLogo from '../assets/images/client_image/Paralympc-gb.png';
+import teamSkyLogo from '../assets/images/client_image/Team_Sky.png';
+import wbsLogo from '../assets/images/client_image/WBS-logo.png';
+import wwaLogo from '../assets/images/client_image/WWA-logo.png';
+import britishEquestrianLogo from '../assets/images/client_image/british_equestrian_federation.png';
+import visLogo from '../assets/images/client_image/vis_orig.png';
+
+// Define component props
+interface Props {
+  label?: string;
+}
+
+// Get props with default values
+const { 
+  label = "Trusted by world-class teams - not just for AI."
+} = Astro.props;
+
+// Define the logos array - you can safely comment out or remove any logos you don't want to show
+const logos = [
+  { src: britishAthleticsLogo, alt: 'British Athletics' },
+  { src: britishSailingLogo, alt: 'British Sailing' },
+  { src: britishSwimmingLogo, alt: 'British Swimming' },
+  { src: eisLogo, alt: 'English Institute of Sport' },
+  { src: gbBoxingLogo, alt: 'GB Boxing' },
+  { src: gbRowingLogo, alt: 'GB Rowing' },
+  { src: ineosLogo, alt: 'INEOS 159' },
+  { src: multimaticLogo, alt: 'Multimatic Motorsports' },
+  { src: paralympicsLogo, alt: 'Paralympic GB' },
+  { src: teamSkyLogo, alt: 'Team Sky' },
+  { src: wbsLogo, alt: 'Warwick Business School' },
+  { src: wwaLogo, alt: 'WWA' },
+  { src: britishEquestrianLogo, alt: 'British Equestrian Federation' },
+  { src: visLogo, alt: 'VIS' },
+];
+---
+
+<section class="relative w-full overflow-hidden py-8 bg-white dark:bg-slate-900">
+  <div class="container mx-auto px-4">
+    {label && (
+      <p class="text-sm text-gray-500 dark:text-gray-400 font-medium mb-4 text-center">{label}</p>
+    )}
+    
+    <div class="relative">
+      <!-- Left fade gradient -->
+      <div 
+        class="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" 
+        style="background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);"
+      ></div>
+      
+      <!-- Logo marquee container -->
+      <div class="logo-marquee">
+        <!-- First track for the animation -->
+        <div class="logo-track">
+          {logos.map(logo => (
+            <div class="logo-item">
+              <Image 
+                src={logo.src} 
+                alt={logo.alt} 
+                class="h-10 w-auto object-contain dark:filter dark:brightness-200"
+                width={120}
+                height={40}
+              />
+            </div>
+          ))}
+          
+          {/* Duplicate the logos to ensure seamless looping */}
+          {logos.map(logo => (
+            <div class="logo-item">
+              <Image 
+                src={logo.src} 
+                alt={logo.alt} 
+                class="h-10 w-auto object-contain dark:filter dark:brightness-200"
+                width={120}
+                height={40}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Right fade gradient -->
+      <div 
+        class="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" 
+        style="background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);"
+      ></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Logo marquee container */
+  .logo-marquee {
+    overflow: hidden;
+    width: 100%;
+    height: 100px; /* Set a fixed height */
+    position: relative;
+  }
+  
+  /* Logo track that moves */
+  .logo-track {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: max-content; /* Important: allows the track to be as wide as needed */
+    animation: marquee 40s linear infinite;
+    will-change: transform;
+  }
+  
+  /* Individual logo items */
+  .logo-item {
+    flex: 0 0 auto;
+    padding: 0 30px; /* Consistent spacing between logos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Animation keyframes */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* Only move half way as we have duplicated the logos */
+    }
+  }
+  
+  /* Dark mode support for fade gradients */
+  @media (prefers-color-scheme: dark) {
+    [style*="linear-gradient(to right, rgba(255,255,255,1)"] {
+      background: linear-gradient(to right, rgba(15,23,42,1) 0%, rgba(15,23,42,0) 100%) !important;
+    }
+    
+    [style*="linear-gradient(to left, rgba(255,255,255,1)"] {
+      background: linear-gradient(to left, rgba(15,23,42,1) 0%, rgba(15,23,42,0) 100%) !important;
+    }
+  }
+</style>
