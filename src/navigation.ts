@@ -9,6 +9,8 @@ export const headerData = {
     {
       text: 'Community',
       href: getPermalink('/community'),
+      target: '_blank',
+      rel: 'noopener noreferrer',
     },
   ],
   actions: [
