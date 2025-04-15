@@ -10,6 +10,7 @@ import LogoMarquee from '~/components/LogoMarquee.astro'; // Import the LogoMarq
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FAQs from '~/components/widgets/FAQs.astro'; // Import the FAQs component
 import Testimonials from '~/components/widgets/Testimonials.astro'; // Import the Testimonials component
+import QuoteBlock from '~/components/QuoteBlock.astro'; // Import the QuoteBlock component
 import { Image } from 'astro:assets'; // Import the Astro Image component
 
 import { headerData } from '~/navigation';
@@ -85,6 +86,12 @@ const ctaActions: CallToActionType[] = [
   <!-- Logo Marquee Section -->
   <LogoMarquee 
     label="Trusted by world-class teams - not just for AI."
+  />
+
+  <!-- AI Headcount Quote Section -->
+  <QuoteBlock 
+    quote="No new headcount unless you can justify why the work CAN'T be done by AI Agents."
+    attribution="— Tobi Lütke, CEO Shopify, April 2025"
   />
 
   <!-- Open Letter Section -->
@@ -432,7 +439,7 @@ const ctaActions: CallToActionType[] = [
       <h3 class="text-2xl font-bold text-primary dark:text-blue-400 mb-2">🚀 Inspired?</h3>
       
       
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Get Your Own AI Strategy Lab</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Get Your Own AI Learning Lab</h2>
       <p class="text-xl text-gray-700 dark:text-gray-300 mb-8">Start with as little as 5 hours a week. Build clarity, momentum, and capability—one working project at a time.</p>
       
       <ul class="text-lg text-gray-700 dark:text-gray-300 space-y-3 text-left inline-block mb-8">
