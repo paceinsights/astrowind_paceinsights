@@ -22,6 +22,8 @@ export interface Post {
   excerpt?: string;
   /**  */
   image?: ImageMetadata | string;
+  /** Hide the header image on the article page (image still shows in listings) */
+  hideHeaderImage?: boolean;
 
   /**  */
   category?: Taxonomy;
