@@ -15,9 +15,11 @@ export const headerData = {
   ],
   actions: [
     {
-      text: 'AI Healthcheck',
-      href: getPermalink('/ai-healthcheck'),
+      text: 'Book a Call',
+      href: 'https://tidycal.com/yourdatadriven/discovery-call',
       variant: 'primary',
+      target: '_blank',
+      rel: 'noopener noreferrer',
     },
   ],
 };
@@ -27,7 +29,7 @@ export const footerData = {
     {
       title: 'Services',
       links: [
-        { text: 'AI Healthcheck', href: getPermalink('/ai-healthcheck') },
+        { text: 'Book a Discovery Call', href: 'https://tidycal.com/yourdatadriven/discovery-call', target: '_blank', rel: 'noopener noreferrer' },
         { text: 'Articles', href: getPermalink('/articles') },
         { text: 'Community', href: getPermalink('/community') },
       ],

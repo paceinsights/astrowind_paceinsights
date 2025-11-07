@@ -3,14 +3,9 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Header from '~/components/widgets/Header.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import Steps3 from '~/components/widgets/Steps3.astro'; // Import the Steps3 component
-import Steps from '~/components/widgets/Steps.astro'; // Import the Steps component
-import Features2 from '~/components/widgets/Features2.astro'; // Import the Features2 component
-import LogoMarquee from '~/components/LogoMarquee.astro'; // Import the LogoMarquee component
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import FAQs from '~/components/widgets/FAQs.astro'; // Import the FAQs component
-import Testimonials from '~/components/widgets/Testimonials.astro'; // Import the Testimonials component
-import QuoteBlock from '~/components/QuoteBlock.astro'; // Import the QuoteBlock component
+import Steps3 from '~/components/widgets/Steps3.astro';
+import LogoMarquee from '~/components/LogoMarquee.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 import { headerData } from '~/navigation';
 import { getPermalink } from '~/utils/permalinks';
@@ -38,20 +33,17 @@ const metadata = {
 // Define actions with proper type annotations
 const heroActions: CallToActionType[] = [
   {
-    text: 'Get Your Free AI Health Check',
-    href: getPermalink('/ai-healthcheck'),
-    variant: 'primary'
+    text: 'Book a Discovery Call',
+    href: 'https://tidycal.com/yourdatadriven/discovery-call',
+    variant: 'primary',
+    target: '_blank',
+    rel: 'noopener noreferrer'
   },
   {
     text: 'Learn More',
     href: getPermalink('/articles/an-open-letter-to-business-leaders'),
     variant: 'secondary'
   }
-];
-
-// Define actions for CallToAction component with proper type annotations
-const ctaActions: CallToActionType[] = [
-  { variant: 'primary', text: 'Take the AI Healthcheck', href: getPermalink('/ai-healthcheck') },
 ];
 
 ---
@@ -82,50 +74,9 @@ const ctaActions: CallToActionType[] = [
   </Hero2>
 
   <!-- Logo Marquee Section -->
-  <LogoMarquee 
+  <LogoMarquee
     label="Trusted by world-class teams - not just for AI."
   />
-
-  <!-- AI Headcount Quote Section -->
-  <QuoteBlock
-    quote="No new headcount unless you can justify why the work CAN'T be done by AI Agents."
-    attribution="— Tobi Lütke, CEO Shopify, April 2025"
-  />
-
-  <!-- Say Hello Section (Replaces About Me) -->
-  <Steps3
-    tagline="Say Hello"
-    title="Samir Abid, Founder"
-    subtitle="From Race Engineering to AI Strategy"
-    items={[
-      {
-        title: 'My Background', 
-        description:
-          "Hi, I'm Samir. I've spent 20+ years solving complex problems across elite sport, engineering, and business. I've helped Olympic teams, motorsport drivers, and companies <strong>turn data into performance</strong>. <br />I hold an MBA from Warwick (where I teach), and I've built and sold digital products, run my own consultancy, and helped organisations make smarter decisions with technology.",
-        icon: "tabler:user",
-      },
-      { 
-        title: 'My AI Journey',
-        description:
-          "When I first saw what AI could do, I didn't sleep for three days. As a natural sceptic, I had to see for myself—especially after spending nine months building an educational product that, if the hype was true, could be made redundant overnight. <br />That moment kicked off a two-year journey. In late 2024, I doubled down—<strong>delegating</strong> large parts of my motorsports academy (marketing, sales, operations) to AI.",
-        icon: "tabler:rocket",
-      },
-      { 
-        title: 'Try it for yourself',
-        description:
-          "Now, as I help others \"AI-ify\" their businesses, I'm acutely aware of the impact this tech will have on people. You should be too. It's a superpower hiding in plain sight. <br />The best way to understand it? Try it. Build something. Apply it to your world—and see how it feels. And just remember: <strong>AI today is the worst it will ever be...</strong>",
-        icon: "tabler:bulb",
-      },
-    ]}
-    image={{
-      src: samirRaceEngineerImage, 
-      alt: 'Samir Abid - Race Engineer',
-    }}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Steps3>
 
   <!-- Testimonials Section -->
   <Testimonials
@@ -160,198 +111,39 @@ const ctaActions: CallToActionType[] = [
     ]}
   />
 
-  <!-- How This Works Section -->
-  <Features2
-    title="How This Works"
-    subtitle="We develop strategy by building—tools, momentum, and your confidence. Start with one working project and grow from there."
+  <!-- Say Hello Section (About Samir) -->
+  <Steps3
+    tagline="Say Hello"
+    title="Samir Abid, Founder"
+    subtitle="From Race Engineering to AI Strategy"
     items={[
       {
-        title: "Start With Clarity",
+        title: 'My Background', 
         description:
-          `Kick off with an AI Health Check or 'Talking to Robots' workshop to map out opportunities.`,
-        icon: "tabler:compass",
+          "Hi, I'm Samir. I've spent 20+ years solving complex problems across elite sport, engineering, and business. I've helped Olympic teams, motorsport drivers, and companies <strong>turn data into performance</strong>. <br />I hold an MBA from Warwick (where I teach), and I've built and sold digital products, run my own consultancy, and helped organisations make smarter decisions with technology.",
+        icon: "tabler:user",
       },
-      {
-        title: "Build to Learn",
+      { 
+        title: 'My AI Journey',
         description:
-          `Pick one project and create something real. Success = a working tool that adds value and sharpens your thinking.`,
-        icon: "tabler:settings",
+          "When I first saw what AI could do, I didn't sleep for three days. As a natural sceptic, I had to see for myself—especially after spending nine months building an educational product that, if the hype was true, could be made redundant overnight. <br />That moment kicked off a two-year journey. In late 2024, I doubled down—<strong>delegating</strong> large parts of my motorsports academy (marketing, sales, operations) to AI.",
+        icon: "tabler:rocket",
       },
-      {
-        title: "Refine and Repeat",
-        description: 
-          `Each project reveals what's next. Iterate, expand, or scale—one smart step at a time.`,
-        icon: "tabler:repeat",
+      { 
+        title: 'Try it for yourself',
+        description:
+          "Now, as I help others \"AI-ify\" their businesses, I'm acutely aware of the impact this tech will have on people. You should be too. It's a superpower hiding in plain sight. <br />The best way to understand it? Try it. Build something. Apply it to your world—and see how it feels. And just remember: <strong>AI today is the worst it will ever be...</strong>",
+        icon: "tabler:bulb",
       },
     ]}
-    classes={{ container: 'max-w-6xl' }}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- What AI Actually Does Section -->
-  <Steps
-    title="What AI can actually do for your business today"
-    subtitle="From strategic thinking partners to autonomous agents—here's what's possible right now:"
-    items={[
-      {
-        title: 'AI That <i>Thinks</i> With You',
-        description: `
-          <p class="mb-4">For clearer decisions, faster insights, and sharper communication.</p>
-          <ul class="list-disc list-inside space-y-2">
-            <li><strong>Language & Communication</strong> – Drafts emails, reports, presentations; translates tone and expertise</li>
-            <li><strong>Research & Insight</strong> – Synthesises information, surfaces patterns, tracks competitors</li>
-            <li><strong>Strategy Co-Creation</strong> – Helps structure decisions, challenges assumptions, acts as thinking partner</li>
-          </ul>
-        `,
-        icon: 'tabler:brain',
-      },
-      {
-        title: 'AI That <i>Works</i> For You',
-        description: `
-          <p class="mb-4">For automation, scale, and always-on support that evolves with your business.</p>
-          <ul class="list-disc list-inside space-y-2">
-            <li><strong>Agentic AI Systems</strong> – Content creators, email assistants, customer service agents, sales support</li>
-            <li><strong>Knowledge-as-a-Service</strong> – Talk to your PDFs, internal GPTs, searchable documentation</li>
-            <li><strong>Tool & Product Building</strong> – Working apps, dashboards, prototypes built in hours</li>
-            <li><strong>Workflow Automation</strong> – Connect tools, trigger actions, automate multi-step processes</li>
-          </ul>
-        `,
-        icon: 'tabler:settings-automation',
-      },
-    ]}
-    callToAction={{
-      text: 'See the Full List of What AI Can Do',
-      href: getPermalink('/articles/what-ai-can-do-for-your-business'),
-      variant: 'link',
-      icon: 'tabler:arrow-right',
+    image={{
+      src: samirRaceEngineerImage, 
+      alt: 'Samir Abid - Race Engineer',
     }}
-    classes={{ container: 'max-w-4xl' }}
-  />
-
-  <!-- Subscription Section (Replaces Pricing) -->
-  <section class="py-16 md:py-20 bg-blue-50 dark:bg-transparent">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-      <h3 class="text-2xl font-bold text-primary dark:text-blue-400 mb-2">🚀 Inspired?</h3>
-      
-      
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Get Your Own AI Learning Lab</h2>
-      <p class="text-xl text-gray-700 dark:text-gray-300 mb-8">Start with as little as 5 hours a week. Build clarity, momentum, and capability—one working project at a time.</p>
-      
-      <ul class="text-lg text-gray-700 dark:text-gray-300 space-y-3 text-left inline-block mb-8">
-        <li class="flex items-start">
-          <span class="text-green-500 mr-2 flex-shrink-0">✅</span> 
-          <div><strong>Strategy-led projects</strong> – Clear priorities, milestones, and shared plans</div>
-        </li>
-        <li class="flex items-start">
-          <span class="text-green-500 mr-2 flex-shrink-0">⚡</span> 
-          <div><strong>Real, usable tools</strong> – Every build works and delivers value from day one</div>
-        </li>
-        <li class="flex items-start">
-          <span class="text-green-500 mr-2 flex-shrink-0">💡</span> 
-          <div><strong>Learning loops</strong> – Each project sharpens strategy and sparks new ideas</div>
-        </li>
-        <li class="flex items-start">
-          <span class="text-green-500 mr-2 flex-shrink-0">📈</span> 
-          <div><strong>Flexible scale</strong> – No long-term contracts, no overheads—just AI expertise on demand</div>
-        </li>
-      </ul>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={getPermalink('/ai-healthcheck')} class="btn btn-primary">Take the AI Healthcheck</a>
-        <a href="mailto:info@paceinsights.com" class="btn btn-secondary">Email Samir</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQs Section -->
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Got questions about AI adoption? We've got answers."
-    items={[
-      {
-        title: 'What does an AI strategy actually mean for my organisation?',
-        description:
-          'It means knowing where AI fits, what it can realistically do for you, and how to adopt it in a way that supports your team, workflows, and goals. It’s not a 5-year plan—it’s a mindset, a map, and a structured way to start building the future.',
-      },
-      {
-        title: 'Why focus on building tools instead of just talking about strategy?',
-        description:
-          'Because clarity comes through doing. We build small, purposeful tools inside your business to test assumptions, build understanding, and identify what works. This isn’t about big-bang digital transformation. It’s about fast feedback and learning by doing.',
-      },
-      {
-        title: 'What makes your approach different?',
-        description:
-          'We bring a performance mindset from motorsport—where decisions are made under pressure, and experimentation is constant. We help your business move quickly, do more with less, and evolve its systems through deliberate, lightweight tests.',
-      },
-      {
-        title: 'How do we deal with how fast this technology is moving?',
-        description:
-          'We help you build systems that are modular and adaptable. When a better tool comes out next week (and it will), you won’t have to start over—you’ll be able to swap components in and out easily. Flexibility is designed in from day one.',
-      },
-      {
-        title: 'What if we don’t even know where to start?',
-        description:
-          'Perfect. That’s exactly what the AI Healthcheck is for. It helps you understand where you are now, where AI might fit, and how to begin without overcommitting. It’s practical, strategic, and built to remove overwhelm.',
-      },
-      {
-        title: 'Do you offer training for our team?',
-        description:
-          'Yes. We run hands-on workshops called “Talking to Robots”—designed to upskill your team using our AI Literacy Ladder and other frameworks we’ve developed to support confident, structured adoption. These are tailored for leadership, teams, or whole organisations.',
-      },
-      {
-        title: 'Can you help us manage the impact of AI on our people and culture?',
-        description:
-          'Yes. In fact, it’s critical. AI adoption often brings fear, uncertainty, and resistance. From our experience introducing data analytics into Olympic sports teams—where change was initially unwelcome—we know how to guide cultural transformation with care and clarity.',
-      },
-      {
-        title: 'Why do you talk about AI Agents like they’re staff?',
-        description:
-          'Because that’s how they behave. They arrive almost job-ready—but like any new hire, they need onboarding, training, feedback, and clear boundaries. Over time, we evolve their roles, grow your confidence, and even help these agents collaborate with each other as teams. Don’t worry—it sounds scary, but we’re here to look after you.',
-      },
-      {
-        title: 'What kinds of businesses do you work with?',
-        description:
-          'Mostly SMEs and mid-sized organisations in sectors like engineering, education, consulting, and services. What matters most is mindset: curiosity, ambition, and a willingness to experiment and learn.',
-      },
-      {
-        title: 'Is it just you?',
-        description:
-          'Pace Insights is led by me, Samir. But I work with a trusted global network of AI freelancers—the best of whom can be brought in to support your project if needed. You’ll always have a single point of contact, backed by serious expertise.',
-      },
-      {
-        title: 'How do you handle data privacy and security?',
-        description:
-          'We guide you through every choice. You stay in control of your data and tooling, and we help you select the right models, platforms, and architecture based on your needs for privacy, cost, and compliance. We don’t touch anything until you’re comfortable.',
-      },
-      {
-        title: 'How does pricing work?',
-        description:
-          'We offer a simple subscription model starting from just 5 hours a week. No long-term contracts. Scale up or down as needed. You get strategic thinking, fast experimentation, and working tools—all under one roof.',
-      },
-      {
-        title: 'What’s your method—and why do you work this way?',
-        description:
-          'Our approach is built around deliberate experimentation. Every tool or workflow we develop is designed to teach you something—not just work technically, but reveal insight. Sometimes we hit the goal first time. Sometimes we don’t. But we always learn—and learning is the real success. There’s no universal playbook for AI. Our job is to help you distil what matters, avoid the noise, and move forward with confidence.',
-      },
-      {
-        title: 'What does success look like in this kind of work?',
-        description:
-          'In the beginning, success means learning. We treat the first phase of work like a research lab—a place to experiment, explore, and build confidence in both the technology and where it fits within your organisation.\n\nFrom there, we help you scale what works—moving into a factory mindset where AI tools go into broader use across teams. That shift comes with more visibility, higher returns, and sometimes more risk. But by then, you’ll have the capability, culture, and clarity to handle it.\n\nAnd this isn’t “one and done.” Continuous improvement is built into everything we do. Our job is to make sure your business becomes smarter, more adaptable, and more efficient—not just through what we build, but through how we help you think.\n\nWhether you stay with us, grow your own internal capability, or later bring in a larger partner—that’s completely fine. We’re here to get you confidently started and set your business off in the best possible direction.',
-      },
-    ]}
-  />
-
-  <!-- Soft Close / CTA Banner Section -->
-  <CallToAction
-    title="Ready to Explore What AI Can Really Do?"
-    subtitle="We don’t take on many clients at once. We prefer to work closely, collaboratively, and move fast. If that sounds like you, the best next step is to try the AI Business Healthcheck. It’s free. It’s short. And it’ll give you a much clearer idea of what’s possible."
-    actions={ctaActions}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </CallToAction>
+  </Steps3>
 
 </Layout>
