@@ -12,7 +12,7 @@ tags:
 image: ~/assets/images/PaceInsights_AI_Strategy.png
 author: "Samir Abid"
 metadata:
-  canonical: https://paceinsights.com/articles/six-week-roadmap-in-three-hours
+  canonical: https://paceinsights.com/articles/what-i-learned-building-rag-system
 ---
 
 I've been building an AI knowledge assistant for about a year now. You know the type - feed it all your company documents and it becomes this expert chatbot that can answer questions about anything you've ever written down.
