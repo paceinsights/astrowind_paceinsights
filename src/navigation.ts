@@ -15,8 +15,8 @@ export const headerData = {
   ],
   actions: [
     {
-      text: 'AI Healthcheck',
-      href: getPermalink('/ai-healthcheck'),
+      text: 'Book a Call',
+      href: 'https://tidycal.com/yourdatadriven/discovery-call',
       variant: 'primary',
     },
   ],
@@ -27,7 +27,7 @@ export const footerData = {
     {
       title: 'Services',
       links: [
-        { text: 'AI Healthcheck', href: getPermalink('/ai-healthcheck') },
+        { text: 'Book a Discovery Call', href: 'https://tidycal.com/yourdatadriven/discovery-call' },
         { text: 'Articles', href: getPermalink('/articles') },
         { text: 'Community', href: getPermalink('/community') },
       ],

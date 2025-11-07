@@ -6,7 +6,6 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import LogoMarquee from '~/components/LogoMarquee.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import { headerData } from '~/navigation';
 import { getPermalink } from '~/utils/permalinks';
@@ -34,8 +33,8 @@ const metadata = {
 // Define actions with proper type annotations
 const heroActions: CallToActionType[] = [
   {
-    text: 'Get Your Free AI Health Check',
-    href: getPermalink('/ai-healthcheck'),
+    text: 'Book a Discovery Call',
+    href: 'https://tidycal.com/yourdatadriven/discovery-call',
     variant: 'primary'
   },
   {
@@ -43,11 +42,6 @@ const heroActions: CallToActionType[] = [
     href: getPermalink('/articles/an-open-letter-to-business-leaders'),
     variant: 'secondary'
   }
-];
-
-// Define actions for CallToAction component with proper type annotations
-const ctaActions: CallToActionType[] = [
-  { variant: 'primary', text: 'Take the AI Healthcheck', href: getPermalink('/ai-healthcheck') },
 ];
 
 ---
@@ -149,16 +143,5 @@ const ctaActions: CallToActionType[] = [
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Steps3>
-
-  <!-- Final CTA Banner Section -->
-  <CallToAction
-    title="Ready to Explore What AI Can Really Do?"
-    subtitle="We don’t take on many clients at once. We prefer to work closely, collaboratively, and move fast. If that sounds like you, the best next step is to try the AI Business Healthcheck. It’s free. It’s short. And it’ll give you a much clearer idea of what’s possible."
-    actions={ctaActions}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </CallToAction>
 
 </Layout>

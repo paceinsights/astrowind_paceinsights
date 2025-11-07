@@ -50,7 +50,7 @@ The best AI initiatives often start small but think big. Look for opportunities 
 
 Ready to start your AI journey? Here's what to do next:
 
-1. Schedule an AI Healthcheck to assess your organization's readiness
+1. [Book a discovery call](https://tidycal.com/yourdatadriven/discovery-call) to discuss your organization's readiness
 2. Develop a strategic roadmap for AI implementation
 3. Start with a pilot project to demonstrate value
 
