@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  caption?: string;
+  class?: string;
+}
+
+const { src, alt, caption, class: className = '' } = Astro.props;
+const id = `modal-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class={`clickable-image-wrapper ${className}`}>
+  <button
+    type="button"
+    onclick={`document.getElementById('${id}').showModal()`}
+    class="cursor-zoom-in hover:opacity-90 transition-opacity w-full block"
+    aria-label="Click to view full size image"
+  >
+    <Image
+      src={src}
+      alt={alt}
+      class="rounded-lg shadow-lg w-full h-auto"
+      loading="eager"
+    />
+    {caption && (
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 text-center italic">
+        {caption} (Click to enlarge)
+      </p>
+    )}
+  </button>
+
+  <dialog
+    id={id}
+    class="backdrop:bg-black backdrop:opacity-80 bg-transparent p-0 max-w-[95vw] max-h-[95vh] rounded-lg"
+  >
+    <div class="relative">
+      <button
+        onclick={`document.getElementById('${id}').close()`}
+        class="absolute -top-10 right-0 text-white hover:text-gray-300 text-4xl font-bold cursor-pointer z-10"
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <Image
+        src={src}
+        alt={alt}
+        class="max-w-full max-h-[90vh] w-auto h-auto rounded-lg"
+        loading="eager"
+      />
+      {caption && (
+        <p class="text-white text-sm mt-2 text-center">
+          {caption}
+        </p>
+      )}
+    </div>
+  </dialog>
+</div>
+
+<style>
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+  }
+
+  dialog[open] {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Close dialog when clicking the backdrop */
+  dialog {
+    cursor: pointer;
+  }
+
+  dialog > div {
+    cursor: default;
+  }
+</style>
+
+<script>
+  // Close dialog when clicking outside the image
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) {
+        dialog.close();
+      }
+    });
+  });
+</script>
