@@ -11,13 +11,11 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import FAQs from '~/components/widgets/FAQs.astro'; // Import the FAQs component
 import Testimonials from '~/components/widgets/Testimonials.astro'; // Import the Testimonials component
 import QuoteBlock from '~/components/QuoteBlock.astro'; // Import the QuoteBlock component
-import { Image } from 'astro:assets'; // Import the Astro Image component
 
 import { headerData } from '~/navigation';
 import { getPermalink } from '~/utils/permalinks';
 
 import samirRaceEngineerImage from '~/assets/images/Samir Abid - Race Engineer.png'; // Updated image import
-import signatureImage from '~/assets/images/Samir Abid public signature.png'; // Import the signature image
 import ogImage from '~/assets/images/Pace Insights - Ai Strategy built.png'; // Import Open Graph image
 import aiStrategyImage from '~/assets/images/PaceInsights_AI_Strategy.png'; // Import AI strategy image
 
@@ -46,7 +44,7 @@ const heroActions: CallToActionType[] = [
   },
   {
     text: 'Learn More',
-    href: '#open-letter',
+    href: getPermalink('/articles/an-open-letter-to-business-leaders'),
     variant: 'secondary'
   }
 ];
@@ -89,166 +87,10 @@ const ctaActions: CallToActionType[] = [
   />
 
   <!-- AI Headcount Quote Section -->
-  <QuoteBlock 
+  <QuoteBlock
     quote="No new headcount unless you can justify why the work CAN'T be done by AI Agents."
     attribution="— Tobi Lütke, CEO Shopify, April 2025"
   />
-
-  <!-- Open Letter Section -->
-  <section id="open-letter" class="py-16 md:py-20 bg-primary-50 dark:bg-slate-800">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12 md:mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-          An Open Letter to Business Leaders
-        </h2>
-      </div>
-      <div class="prose prose-lg max-w-none dark:prose-invert text-gray-700 dark:text-gray-300 space-y-6">
-        <p>AI isn't like other software.</p>
-        
-        <p>
-          Most people's mental models of what it is, what it does, and where it fits are way off.<br />
-          And that's okay—even the toolmakers don't fully understand how it works.
-        </p>
-        
-        <p>
-          But that's not your concern.
-        </p>
-        
-        <p>
-          What matters is how AI can be employed—yes, just like <strong>digital labour</strong>—to do work across your business.
-        </p>
-        
-        <ul class="list-disc list-inside space-y-2">
-          <li>24/7</li>
-          <li>At scale</li>
-          <li>For (basically) <strong>free</strong></li>
-        </ul>
-        
-        <h3>Imagine this</h3>
-        
-        <p>
-          Delegating everything you do on a computer—to AI.<br />
-          And even things you don't:
-        </p>
-        
-        <ul class="list-disc list-inside space-y-2">
-          <li>Meeting notes</li>
-          <li>Campaign planning</li>
-          <li>Business strategy...</li>
-        </ul>
-        
-        <p>
-          Forget the hype. The buzzwords. The idea that this is just "a fancy Google."
-        </p>
-        
-        <p>
-          <strong>Ask yourself:</strong><br />
-          <strong>What would delgating to AI mean for your business, your team, your customers?</strong>
-          <br /><br />
-        </p>
-        
-        <h3>This isn't buying a new tool</h3>
-        
-        <p>
-          To get real value, you'll need to reimagine how whole parts of your organisation work.
-        </p>
-        
-        <p>Because creating software systems is no longer a bottleneck:</p>
-        
-        <blockquote class="italic border-l-4 border-primary pl-4 py-2 my-6 dark:border-primary-600">
-          "The new coding language isn't Python or JavaScript—it's English!"
-        </blockquote>
-        
-        <p>
-          Just describe what you want.<br />
-          You can have it—instantly.<br />
-          (But so can your competitors...)
-        </p>
-        
-        <h3>Your real challenge</h3>
-        
-        <p>
-          It's not technical. Not IT.
-        </p>
-        
-        <p>To build a strong AI strategy, you need:</p>
-        
-        <ul class="list-disc list-inside space-y-2">
-          <li>A clear mental model of what AI is (and isn't)</li>
-          <li>A smart, low-risk starting point</li>
-          <li>A plan for your people, process, and culture</li>
-        </ul>
-        
-        <h3>AI is a generational shift</h3>
-        
-        <p>
-          Our motorsports background taught us: structured experiments and fast iteration win.<br />
-          That same mindset now applies to AI.
-        </p>
-        
-        <p>You won't get confidence from a slide deck.</p>
-        
-        <p>
-          You need to see it in action—doing real work in your business.
-        </p>
-        
-        <h3>Tooling is easy—keeping up is hard</h3>
-        
-        <p>The hard part is:</p>
-        
-        <ul class="list-disc list-inside space-y-2">
-          <li>Staying current with the avalanche of new releases</li>
-          <li>Knowing when to switch underlying technologies</li>
-          <li>Balancing cost, speed, and quality</li>
-          <li>Learning best practices from a global AI community</li>
-        </ul>
-        
-        <p>
-          That’s our full-time job—because these shifts can “10x” your quality or “100x” your cost savings, seemingly every week.
-        </p>
-        
-        <h3>We're your partner</h3>
-        
-        <p>
-          Yes—we build tools.<br />
-          Yes—we educate teams.<br />
-          Yes—we redesign systems.
-        </p>
-        
-        <p>
-          But our real value?
-        </p>
-        
-        <p>
-          We're your trusted AI thinking partner—bringing clarity, creativity, and results without the noise.
-        </p>
-        
-        <p>
-          We don't work with many clients. But if this sounds like a fit, try the <strong>AI Healthcheck</strong>.
-        </p>
-        
-        <p>
-          If we believe we can help you, we’ll be in touch—it’d be a pleasure.
-        </p>
-        
-        <p>
-          And even if it’s not with us, take a moment to ask yourself:<br />
-          <strong>What would your business look like if no one needed a screen to get things done?</strong>
-        </p>
-
-        <!-- Add Signature Image -->
-        <div class="mt-8">
-          <Image 
-            src={signatureImage} 
-            alt="Samir Abid Signature" 
-            width={200} 
-            height={100}  
-            class="max-w-[200px] h-auto" 
-          />
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Say Hello Section (Replaces About Me) -->
   <Steps3
