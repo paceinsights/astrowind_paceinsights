@@ -71,7 +71,7 @@ const { post, url } = Astro.props;
       </p>
 
       {
-        post.image ? (
+        post.image && !post.hideHeaderImage ? (
           <Image
             src={post.image}
             class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
@@ -83,11 +83,11 @@ const { post, url } = Astro.props;
             loading="eager"
             decoding="async"
           />
-        ) : (
+        ) : !post.image ? (
           <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <div class="border-t dark:border-slate-700" />
           </div>
-        )
+        ) : null
       }
     </header>
     <div
