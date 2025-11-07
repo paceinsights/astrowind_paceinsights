@@ -1,7 +1,7 @@
 ---
 publishDate: 2025-11-07T00:00:00Z
-title: "The 6-Week Roadmap I Implemented in 3 Hours"
-excerpt: "Building an AI knowledge assistant taught me something unexpected: it's not about what AI can build—it's about what happens when you can experiment 10x faster than before."
+title: "What I Learned Building a RAG System Over the Last Year"
+excerpt: "A year of building an AI knowledge assistant taught me something unexpected: the game-changing shift isn't what AI can build—it's how fast you can now experiment with different approaches."
 category: "AI Development"
 tags:
   - ai
