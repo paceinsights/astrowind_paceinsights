@@ -9,11 +9,17 @@ tags:
   - rapid development
   - experimentation
   - software development
-image: ~/assets/images/PaceInsights_AI_Strategy.png
+image: ~/assets/images/A year of building RAG AI /A year of building RAG - Step 4.png
 author: "Samir Abid"
 metadata:
   canonical: https://paceinsights.com/articles/what-i-learned-building-rag-system
 ---
+
+import { Image } from 'astro:assets';
+import step1Image from '~/assets/images/A year of building RAG AI /A year of building RAG - Step 1.png';
+import step2Image from '~/assets/images/A year of building RAG AI /A year of building RAG - Step 2.png';
+import step3Image from '~/assets/images/A year of building RAG AI /A year of building RAG - Step 3.png';
+import step4Image from '~/assets/images/A year of building RAG AI /A year of building RAG - Step 4.png';
 
 I've been building an AI knowledge assistant for about a year now. You know the type - feed it all your company documents and it becomes this expert chatbot that can answer questions about anything you've ever written down.
 
@@ -26,6 +32,8 @@ But what I actually learned - what genuinely surprised me - was something differ
 Let me walk you through what happened.
 
 ## Starting Point
+
+<Image src={step1Image} alt="Step 1: Vector Database Architecture" class="my-8 rounded-lg shadow-lg" />
 
 I did what everyone does first. Set up a vector database. That's the standard approach for this kind of system.
 
@@ -49,6 +57,8 @@ But here's what struck me even then: I was trying all these different approaches
 
 ## The Hybrid Approach
 
+<Image src={step2Image} alt="Step 2: Hybrid Search Approach" class="my-8 rounded-lg shadow-lg" />
+
 Then I found out you could combine both methods. Run the semantic search and regular keyword search at the same time, blend the results together.
 
 So now "specification 1234" would get caught by the keyword part. Questions like "how are these projects performing" would get handled by the semantic part.
@@ -58,6 +68,8 @@ That helped. A lot, actually. Things got noticeably more consistent.
 And again - this took me maybe a few days to implement and test. In the past, this would've been a whole thing. Meetings about whether to try it. Risk assessment. Now I just... tried it.
 
 ## The Knowledge Problem
+
+<Image src={step3Image} alt="Step 3: Re-ranker for Quality Improvement" class="my-8 rounded-lg shadow-lg" />
 
 As I added more documents, a new problem showed up.
 
@@ -78,6 +90,8 @@ In traditional software development, adding a whole new layer like this would've
 That's when I started noticing the pattern.
 
 ## The Graph Database
+
+<Image src={step4Image} alt="Step 4: Graph Database Integration" class="my-8 rounded-lg shadow-lg" />
 
 Eventually I hit a different kind of problem. Context wasn't just living inside documents. It was living between them.
 
