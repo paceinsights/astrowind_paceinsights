@@ -194,35 +194,16 @@ const ctaActions: CallToActionType[] = [
   <!-- What AI Actually Does Section -->
   <Steps
     title="What AI can actually do for your business today"
-    subtitle="Working examples you can launch—and learn from—this week:"
+    subtitle="From strategic thinking partners to autonomous agents—here's what's possible right now:"
     items={[
       {
         title: 'AI That <i>Thinks</i> With You',
         description: `
-          <p class="font-semibold mb-2">For clearer decisions, faster insights, and sharper communication.</p>
-          
-          <h4 class="font-bold text-lg mt-4 mb-2">💬 Language & Communication</h4>
+          <p class="mb-4">For clearer decisions, faster insights, and sharper communication.</p>
           <ul class="list-disc list-inside space-y-2">
-            <li>Drafts emails, reports, presentations, and posts</li>
-            <li>Translates across tone, language, and expertise</li>
-            <li>Summarises meetings, documents, and articles</li>
-            <li>Prepares talking points and personalised responses</li>
-          </ul>
-          
-          <h4 class="font-bold text-lg mt-4 mb-2">🔍 Research & Insight</h4>
-          <ul class="list-disc list-inside space-y-2">
-            <li>Synthesises public and internal information</li>
-            <li>Surfaces patterns, trends, and opportunities</li>
-            <li>Tracks competitors and market shifts</li>
-            <li>Reduces time-to-understanding across roles</li>
-          </ul>
-          
-          <h4 class="font-bold text-lg mt-4 mb-2">🧠 Strategy Co-Creation</h4>
-          <ul class="list-disc list-inside space-y-2">
-            <li>Helps structure decisions and explore new directions</li>
-            <li>Challenges assumptions and reframes problems</li>
-            <li>Develops frameworks, messaging, and positioning</li>
-            <li>Acts as a strategic thinking partner when you need one</li>
+            <li><strong>Language & Communication</strong> – Drafts emails, reports, presentations; translates tone and expertise</li>
+            <li><strong>Research & Insight</strong> – Synthesises information, surfaces patterns, tracks competitors</li>
+            <li><strong>Strategy Co-Creation</strong> – Helps structure decisions, challenges assumptions, acts as thinking partner</li>
           </ul>
         `,
         icon: 'tabler:brain',
@@ -230,48 +211,23 @@ const ctaActions: CallToActionType[] = [
       {
         title: 'AI That <i>Works</i> For You',
         description: `
-          <p class="font-semibold mb-2">For automation, scale, and always-on support that evolves with your business.</p>
-          
-          <h4 class="font-bold text-lg mt-4 mb-2">🧭 Agentic AI Systems</h4>
+          <p class="mb-4">For automation, scale, and always-on support that evolves with your business.</p>
           <ul class="list-disc list-inside space-y-2">
-            <li>Content creator – writes posts, emails, internal comms</li>
-            <li>Email triage assistant – drafts replies, sorts, and tags inboxes</li>
-            <li>Report writer – builds summaries from your live data</li>
-            <li>Customer service agent – answers questions using company knowledge</li>
-            <li>Sales support agent – enriches leads, follows up, tracks pipeline</li>
-            <li>Analytics generator – turns raw data into visual insights</li>
-            <li>Project planner – creates structured plans and timelines</li>
-            <li>Calendar assistant – books meetings, sends reminders, follows up</li>
-          </ul>
-          
-          <h4 class="font-bold text-lg mt-4 mb-2">📚 Knowledge-as-a-Service</h4>
-          <ul class="list-disc list-inside space-y-2">
-            <li>"Talk to your PDFs" and internal documents</li>
-            <li>Internal GPTs trained on your data</li>
-            <li>Turns SOPs and reports into searchable systems</li>
-            <li>Onboards staff faster and improves consistency</li>
-          </ul>
-          
-          <h4 class="font-bold text-lg mt-4 mb-2">🧱 Tool & Product Building</h4>
-          <ul class="list-disc list-inside space-y-2">
-            <li>Builds working apps, dashboards, and prototypes</li>
-            <li>Writes and maintains internal tools and code</li>
-            <li>Extends legacy systems with new interfaces</li>
-            <li>Supports fast experimentation before dev investment</li>
-          </ul>
-          
-          <h4 class="font-bold text-lg mt-4 mb-2">🤖 Workflow Automation</h4>
-          <ul class="list-disc list-inside space-y-2">
-            <li>Routes data between tools (CRM, Notion, Slack, Email, etc.)</li>
-            <li>Triggers actions from events (e.g. lead created → email sent)</li>
-            <li>Formats, tags, and distributes content</li>
-            <li>Enriches records, syncs reports, updates dashboards</li>
-            <li>Creates dependable, multi-step automations</li>
+            <li><strong>Agentic AI Systems</strong> – Content creators, email assistants, customer service agents, sales support</li>
+            <li><strong>Knowledge-as-a-Service</strong> – Talk to your PDFs, internal GPTs, searchable documentation</li>
+            <li><strong>Tool & Product Building</strong> – Working apps, dashboards, prototypes built in hours</li>
+            <li><strong>Workflow Automation</strong> – Connect tools, trigger actions, automate multi-step processes</li>
           </ul>
         `,
         icon: 'tabler:settings-automation',
       },
     ]}
+    callToAction={{
+      text: 'See the Full List of What AI Can Do',
+      href: getPermalink('/articles/what-ai-can-do-for-your-business'),
+      variant: 'link',
+      icon: 'tabler:arrow-right',
+    }}
     classes={{ container: 'max-w-4xl' }}
   />
 
