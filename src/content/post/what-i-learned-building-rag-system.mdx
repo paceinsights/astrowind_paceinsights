@@ -33,6 +33,8 @@ Let me walk you through what happened.
 
 ## Starting Point
 
+<Image src={step1Image} alt="Step 1: Vector Database Architecture" class="my-8 rounded-lg shadow-lg" />
+
 I did what everyone does first. Set up a vector database. That's the standard approach for this kind of system.
 
 The way it works: you take your PDFs, break them into chunks, turn them into these mathematical representations, store them in a database. Someone asks a question, the system finds relevant chunks, sends them to the AI, you get an answer back.
@@ -53,9 +55,9 @@ What I found myself doing: you make a choice about how the system works, and you
 
 But here's what struck me even then: I was trying all these different approaches in days. Not weeks. Not months. Just trying things, seeing what worked, moving on to the next thing.
 
-<Image src={step1Image} alt="Step 1: Vector Database Architecture" class="my-8 rounded-lg shadow-lg" />
-
 ## The Hybrid Approach
+
+<Image src={step2Image} alt="Step 2: Hybrid Search Approach" class="my-8 rounded-lg shadow-lg" />
 
 Then I found out you could combine both methods. Run the semantic search and regular keyword search at the same time, blend the results together.
 
@@ -65,9 +67,9 @@ That helped. A lot, actually. Things got noticeably more consistent.
 
 And again - this took me maybe a few days to implement and test. In the past, this would've been a whole thing. Meetings about whether to try it. Risk assessment. Now I just... tried it.
 
-<Image src={step2Image} alt="Step 2: Hybrid Search Approach" class="my-8 rounded-lg shadow-lg" />
-
 ## The Knowledge Problem
+
+<Image src={step3Image} alt="Step 3: Re-ranker for Quality Improvement" class="my-8 rounded-lg shadow-lg" />
 
 As I added more documents, a new problem showed up.
 
@@ -87,9 +89,9 @@ In traditional software development, adding a whole new layer like this would've
 
 That's when I started noticing the pattern.
 
-<Image src={step3Image} alt="Step 3: Re-ranker for Quality Improvement" class="my-8 rounded-lg shadow-lg" />
-
 ## The Graph Database
+
+<Image src={step4Image} alt="Step 4: Graph Database Integration" class="my-8 rounded-lg shadow-lg" />
 
 Eventually I hit a different kind of problem. Context wasn't just living inside documents. It was living between them.
 
@@ -108,8 +110,6 @@ But here's the bit that made me stop and think: when I looked into implementing 
 Not because I'm particularly clever. But because the AI could help me write the code, spot the mistakes, suggest better approaches. I stayed focused on the design - what I wanted it to do - and the implementation went way faster than I expected.
 
 That's when it clicked for me. This isn't just about building a better AI system. It's about what happens when you can try things that used to take weeks in a matter of hours.
-
-<Image src={step4Image} alt="Step 4: Graph Database Integration" class="my-8 rounded-lg shadow-lg" />
 
 ## What This Actually Changes
 
