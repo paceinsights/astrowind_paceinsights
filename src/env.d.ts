@@ -3,3 +3,10 @@
 /// <reference types="astro/client" />
 /// <reference types="vite/client" />
 /// <reference types="../vendor/integration/types.d.ts" />
+
+interface Window {
+  plausible: {
+    (...args: unknown[]): void;
+    q?: unknown[];
+  };
+}

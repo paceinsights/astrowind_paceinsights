@@ -11,7 +11,6 @@ import { headerData } from '~/navigation';
 import { getPermalink } from '~/utils/permalinks';
 
 import samirRaceEngineerImage from '~/assets/images/Samir Abid standing2.png'; // Updated image import
-import ogImage from '~/assets/images/Pace Insights - Ai Strategy built.png'; // Import Open Graph image
 import aiStrategyImage from '~/assets/images/PaceInsights_AI_Strategy.png'; // Import AI strategy image
 
 // Import testimonial images
@@ -25,26 +24,23 @@ import type { CallToAction as CallToActionType } from '~/types';
 const metadata = {
   title: 'Pace Insights | AI Strategy & Implementation for Business Leaders',
   description: 'Partner with Pace Insights to confidently adopt AI. We build practical AI tools and strategies, moving beyond hype to deliver real business outcomes. Free AI Healthcheck available.',
-  openGraph: {
-    image: ogImage,
-  },
 };
 
 // Define actions with proper type annotations
-const heroActions: CallToActionType[] = [
+const heroActions = [
   {
     text: 'Book a Discovery Call',
     href: 'https://tidycal.com/yourdatadriven/discovery-call',
-    variant: 'primary',
+    variant: 'primary' as const,
     target: '_blank',
-    rel: 'noopener noreferrer'
+    rel: 'noopener noreferrer',
   },
   {
     text: 'Learn More',
     href: getPermalink('/articles/an-open-letter-to-business-leaders'),
-    variant: 'secondary'
-  }
-];
+    variant: 'secondary' as const,
+  },
+] satisfies CallToActionType[];
 
 ---
 

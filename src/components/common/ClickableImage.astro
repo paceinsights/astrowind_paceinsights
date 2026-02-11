@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
   src: ImageMetadata;
@@ -9,7 +10,7 @@ interface Props {
 }
 
 const { src, alt, caption, class: className = '' } = Astro.props;
-const id = `modal-${Math.random().toString(36).substr(2, 9)}`;
+const id = `modal-${Math.random().toString(36).substring(2, 11)}`;
 ---
 
 <div class={`clickable-image-wrapper ${className}`}>

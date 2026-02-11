@@ -17,7 +17,7 @@ export const headerData = {
     {
       text: 'Book a Call',
       href: 'https://tidycal.com/yourdatadriven/discovery-call',
-      variant: 'primary',
+      variant: 'primary' as const,
       target: '_blank',
       rel: 'noopener noreferrer',
     },

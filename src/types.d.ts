@@ -271,7 +271,7 @@ export interface Steps extends Omit<Headline, 'classes'>, Widget {
     classes?: Record<string, string>;
   }>;
   callToAction?: string | CallToAction;
-  image?: string | Image;
+  image?: string | Image | unknown;
   isReversed?: boolean;
 }
 
