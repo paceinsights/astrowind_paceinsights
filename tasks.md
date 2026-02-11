@@ -16,7 +16,11 @@
   - Added `window.plausible` type declaration in `env.d.ts`
   - Fixed `ClickableImage.astro` — `.substr()` → `.substring()`, added missing `ImageMetadata` import
 
+- [x] **Fix ESLint errors (40 errors → 0)** *(2026-02-11)*
+  - Added test runner globals (`describe`, `it`, `expect`, etc.) to ESLint config for `tests/` directory
+  - Removed unused `metadata` variable from `community.astro` (redirect-only page)
+  - Replaced `arguments` with rest params (`...args`) in `Analytics.astro` Plausible script + added `is:inline`
+
 ## Discovered During Work
 
 - [ ] **Review wider homepage messaging** — Owner noted the homepage may need further copy updates as the business evolves.
-- [ ] **community.astro metadata unused** — The `metadata` variable is declared but never consumed (page is just a redirect). Low priority hint.

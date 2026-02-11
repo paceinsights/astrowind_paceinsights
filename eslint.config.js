@@ -54,6 +54,20 @@ export default [
     },
   },
   {
+    files: ['tests/**/*.{js,ts}'],
+    languageOptions: {
+      globals: {
+        describe: 'readonly',
+        it: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly',
+      },
+    },
+  },
+  {
     ignores: ['dist', 'node_modules', '.github', 'types.generated.d.ts', '.astro'],
   },
 ];
