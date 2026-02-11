@@ -13,5 +13,15 @@ import { ANALYTICS } from 'astrowind:config';
 }
 
 <!-- Plausible Analytics -->
-<script defer data-domain="paceinsights.com" src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
-<script is:inline>window.plausible = window.plausible || function(...args) { (window.plausible.q = window.plausible.q || []).push(args) }</script>
+<script
+  defer
+  data-domain="paceinsights.com"
+  src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+></script>
+<script is:inline>
+  window.plausible =
+    window.plausible ||
+    function (...args) {
+      (window.plausible.q = window.plausible.q || []).push(args);
+    };
+</script>

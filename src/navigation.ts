@@ -29,7 +29,12 @@ export const footerData = {
     {
       title: 'Services',
       links: [
-        { text: 'Book a Discovery Call', href: 'https://tidycal.com/yourdatadriven/discovery-call', target: '_blank', rel: 'noopener noreferrer' },
+        {
+          text: 'Book a Discovery Call',
+          href: 'https://tidycal.com/yourdatadriven/discovery-call',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+        },
         { text: 'Articles', href: getPermalink('/articles') },
         { text: 'Community', href: getPermalink('/community') },
       ],

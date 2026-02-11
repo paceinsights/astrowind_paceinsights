@@ -23,7 +23,8 @@ import type { CallToAction as CallToActionType } from '~/types';
 // Define Metadata
 const metadata = {
   title: 'Pace Insights | AI Strategy & Implementation for Business Leaders',
-  description: 'Partner with Pace Insights to confidently adopt AI. We build practical AI tools and strategies, moving beyond hype to deliver real business outcomes. Free AI Healthcheck available.',
+  description:
+    'Partner with Pace Insights to confidently adopt AI. We build practical AI tools and strategies, moving beyond hype to deliver real business outcomes. Free AI Healthcheck available.',
 };
 
 // Define actions with proper type annotations
@@ -41,7 +42,6 @@ const heroActions = [
     variant: 'secondary' as const,
   },
 ] satisfies CallToActionType[];
-
 ---
 
 <Layout metadata={metadata}>
@@ -60,54 +60,57 @@ const heroActions = [
     }}
   >
     <Fragment slot="title">
-      If your budget doubled, <span class="text-primary dark:text-white highlight"><br>where would you invest it?</span>
+      If your budget doubled, <span class="text-primary dark:text-white highlight"
+        ><br />where would you invest it?</span
+      >
     </Fragment>
     <Fragment slot="subtitle">
       AI has shifted the constraints on how businesses operate.<br />
       Expensive can become cheap.<br />
       Weeks can become hours.<br />
       <br />But just because you <i>can</i>, doesn't mean you <i>should</i>.<br />
-      <br />If traditional limits on cost, time and people were eased, 
+      <br />If traditional limits on cost, time and people were eased,
       <br />how would you <i><u>really</u></i> want your business to run?<br />
       <br />Now is the time to get a little imaginative...
     </Fragment>
   </Hero2>
 
   <!-- Logo Marquee Section -->
-  <LogoMarquee
-    label="Trusted by world-class teams - not just for AI."
-  />
+  <LogoMarquee label="Trusted by world-class teams - not just for AI." />
 
   <!-- Testimonials Section -->
   <Testimonials
     testimonials={[
       {
-        testimonial: "Are you kidding me Samir, you're selling this! This ticks all the boxes. It will be a big help. Please just don't tell anyone, I need every advantage I can get!",
-        name: "Jeff Braun",
-        job: "Race Engineer",
+        testimonial:
+          "Are you kidding me Samir, you're selling this! This ticks all the boxes. It will be a big help. Please just don't tell anyone, I need every advantage I can get!",
+        name: 'Jeff Braun',
+        job: 'Race Engineer',
         image: {
           src: jeffBraunImage,
-          alt: "Jeff Braun"
-        }
+          alt: 'Jeff Braun',
+        },
       },
       {
-        testimonial: "Wow, that Samir sure knows his stuff. And his presentation style is fantastic – his authority around the topic comes through without being condescending.",
-        name: "Tom Roberts",
-        job: "Business Leader",
+        testimonial:
+          'Wow, that Samir sure knows his stuff. And his presentation style is fantastic – his authority around the topic comes through without being condescending.',
+        name: 'Tom Roberts',
+        job: 'Business Leader',
         image: {
           src: tomRobertsImage,
-          alt: "Tom Roberts"
-        }
+          alt: 'Tom Roberts',
+        },
       },
       {
-        testimonial: "I loved the approach of focusing on the process of experimentation rather than simply giving us an answer. It's like the saying, 'teach a man to fish.' Great!",
-        name: "Angus Lemon",
-        job: "Team Manager",
+        testimonial:
+          "I loved the approach of focusing on the process of experimentation rather than simply giving us an answer. It's like the saying, 'teach a man to fish.' Great!",
+        name: 'Angus Lemon',
+        job: 'Team Manager',
         image: {
           src: angusLemonImage,
-          alt: "Angus Lemon"
-        }
-      }
+          alt: 'Angus Lemon',
+        },
+      },
     ]}
   />
 
@@ -118,26 +121,26 @@ const heroActions = [
     subtitle="From Race Engineering to AI Strategy"
     items={[
       {
-        title: 'My Background', 
+        title: 'My Background',
         description:
           "Hi, I'm Samir. I've spent 20+ years solving complex problems across elite sport, engineering, and business. I've helped Olympic teams, motorsport drivers, and companies <strong>turn data into performance</strong>. <br />I hold an MBA from Warwick (where I teach), and I've built and sold digital products, run my own consultancy, and helped organisations make smarter decisions with technology.",
-        icon: "tabler:user",
+        icon: 'tabler:user',
       },
-      { 
+      {
         title: 'My AI Journey',
         description:
           "When I first saw what AI could do, I didn't sleep for three days. As a natural sceptic, I had to see for myself—especially after spending nine months building an educational product that, if the hype was true, could be made redundant overnight. <br />That moment kicked off a two-year journey. In late 2024, I doubled down—<strong>delegating</strong> large parts of my motorsports academy (marketing, sales, operations) to AI.",
-        icon: "tabler:rocket",
+        icon: 'tabler:rocket',
       },
-      { 
+      {
         title: 'Try it for yourself',
         description:
-          "Now, as I help others \"AI-ify\" their businesses, I'm acutely aware of the impact this tech will have on people. You should be too. It's a superpower hiding in plain sight. <br />The best way to understand it? Try it. Build something. Apply it to your world—and see how it feels. And just remember: <strong>AI today is the worst it will ever be...</strong>",
-        icon: "tabler:bulb",
+          'Now, as I help others "AI-ify" their businesses, I\'m acutely aware of the impact this tech will have on people. You should be too. It\'s a superpower hiding in plain sight. <br />The best way to understand it? Try it. Build something. Apply it to your world—and see how it feels. And just remember: <strong>AI today is the worst it will ever be...</strong>',
+        icon: 'tabler:bulb',
       },
     ]}
     image={{
-      src: samirRaceEngineerImage, 
+      src: samirRaceEngineerImage,
       alt: 'Samir Abid - Race Engineer',
     }}
   >
@@ -145,5 +148,4 @@ const heroActions = [
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Steps3>
-
 </Layout>

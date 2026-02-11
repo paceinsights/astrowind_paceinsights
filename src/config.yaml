@@ -11,7 +11,7 @@ metadata:
   title:
     default: Pace Insights
     template: '%s — Pace Insights'
-  description: "Your first AI Department. Get strategic guidance, implementation support, and ongoing optimization from your dedicated AI team."
+  description: 'Your first AI Department. Get strategic guidance, implementation support, and ongoing optimization from your dedicated AI team.'
   robots:
     index: true
     follow: true

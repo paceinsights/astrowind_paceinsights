@@ -38,6 +38,26 @@ Pace Insights is a marketing/sales website for an Applied AI consultancy run by 
 - Follow the existing Tailwind class patterns for consistency.
 - Keep the site lightweight and fast — avoid unnecessary dependencies.
 
+## Pre-Commit Checks
+
+**Before every commit**, run the full check suite to ensure CI will pass:
+
+```bash
+npm run check
+```
+
+This runs three checks in sequence:
+
+1. `astro check` — TypeScript and Astro diagnostics
+2. `eslint .` — Linting
+3. `prettier --check .` — Formatting
+
+A **Git pre-commit hook** is installed (`.git/hooks/pre-commit`) that runs these automatically on every `git commit`. If any check fails, the commit is blocked.
+
+**In Windsurf**, use the `/pre-commit` workflow to have Cascade run the full suite, fix any issues, and confirm it's safe to commit.
+
+**Tip:** If Prettier formatting fails, run `npx prettier --write .` first, then re-run `npm run check`.
+
 ## Key URLs
 
 - **Discovery Call CTA:** `https://tidycal.com/yourdatadriven/discovery-call`

@@ -25,9 +25,7 @@ interface Props {
 }
 
 // Get props with default values
-const { 
-  label = "Trusted by world-class teams - not just for AI."
-} = Astro.props;
+const { label = 'Trusted by world-class teams - not just for AI.' } = Astro.props;
 
 // Define the logos array - you can safely comment out or remove any logos you don't want to show
 const logos = [
@@ -47,62 +45,65 @@ const logos = [
   { src: britishEquestrianLogo, alt: 'British Equestrian Federation' },
   { src: visLogo, alt: 'VIS' },
 ];
-
 ---
 
 <section class="relative w-full overflow-hidden py-4 pt-0 bg-white">
   <div class="container mx-auto px-4">
-    {label && (
-      <p class="text-sm text-gray-500 font-medium mb-4 text-center">{label}</p>
-    )}
-    
+    {label && <p class="text-sm text-gray-500 font-medium mb-4 text-center">{label}</p>}
+
     <div class="relative">
       <!-- Left fade gradient -->
-      <div 
-        class="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" 
+      <div
+        class="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
         style="background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);"
-      ></div>
-      
+      >
+      </div>
+
       <!-- Logo marquee container -->
       <div class="logo-marquee">
         <!-- First track for the animation -->
         <div class="logo-track">
-          {logos.map(logo => (
-            <div class="logo-item">
-              <Image 
-                src={logo.src} 
-                alt={logo.alt} 
-                class="h-10 w-auto object-contain"
-                width={120}
-                height={40}
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-          ))}
-          
+          {
+            logos.map((logo) => (
+              <div class="logo-item">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  class="h-10 w-auto object-contain"
+                  width={120}
+                  height={40}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+            ))
+          }
+
           {/* Duplicate the logos to ensure seamless looping */}
-          {logos.map(logo => (
-            <div class="logo-item">
-              <Image 
-                src={logo.src} 
-                alt={logo.alt} 
-                class="h-10 w-auto object-contain"
-                width={120}
-                height={40}
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-          ))}
+          {
+            logos.map((logo) => (
+              <div class="logo-item">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  class="h-10 w-auto object-contain"
+                  width={120}
+                  height={40}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+            ))
+          }
         </div>
       </div>
-      
+
       <!-- Right fade gradient -->
-      <div 
-        class="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" 
+      <div
+        class="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
         style="background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);"
-      ></div>
+      >
+      </div>
     </div>
   </div>
 </section>
@@ -116,7 +117,7 @@ const logos = [
     position: relative;
     -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, #000 5%, #000 95%, transparent 100%);
   }
-  
+
   /* Logo track that moves */
   .logo-track {
     display: flex;
@@ -130,7 +131,7 @@ const logos = [
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
   }
-  
+
   /* Individual logo items */
   .logo-item {
     flex: 0 0 auto;
@@ -140,7 +141,7 @@ const logos = [
     justify-content: center;
     will-change: transform;
   }
-  
+
   /* Animation keyframes */
   @keyframes marquee {
     0% {
@@ -150,7 +151,7 @@ const logos = [
       transform: translateX(-50%); /* Only move half way as we have duplicated the logos */
     }
   }
-  
+
   /* Pause animation when user prefers reduced motion */
   @media (prefers-reduced-motion) {
     .logo-track {

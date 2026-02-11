@@ -20,23 +20,15 @@ const id = `modal-${Math.random().toString(36).substring(2, 11)}`;
     class="cursor-zoom-in hover:opacity-90 transition-opacity w-full block"
     aria-label="Click to view full size image"
   >
-    <Image
-      src={src}
-      alt={alt}
-      class="rounded-lg shadow-lg w-full h-auto"
-      loading="eager"
-    />
-    {caption && (
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 text-center italic">
-        {caption} (Click to enlarge)
-      </p>
-    )}
+    <Image src={src} alt={alt} class="rounded-lg shadow-lg w-full h-auto" loading="eager" />
+    {
+      caption && (
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 text-center italic">{caption} (Click to enlarge)</p>
+      )
+    }
   </button>
 
-  <dialog
-    id={id}
-    class="backdrop:bg-black backdrop:opacity-80 bg-transparent p-0 max-w-[95vw] max-h-[95vh] rounded-lg"
-  >
+  <dialog id={id} class="backdrop:bg-black backdrop:opacity-80 bg-transparent p-0 max-w-[95vw] max-h-[95vh] rounded-lg">
     <div class="relative">
       <button
         onclick={`document.getElementById('${id}').close()`}
@@ -45,17 +37,8 @@ const id = `modal-${Math.random().toString(36).substring(2, 11)}`;
       >
         ×
       </button>
-      <Image
-        src={src}
-        alt={alt}
-        class="max-w-full max-h-[90vh] w-auto h-auto rounded-lg"
-        loading="eager"
-      />
-      {caption && (
-        <p class="text-white text-sm mt-2 text-center">
-          {caption}
-        </p>
-      )}
+      <Image src={src} alt={alt} class="max-w-full max-h-[90vh] w-auto h-auto rounded-lg" loading="eager" />
+      {caption && <p class="text-white text-sm mt-2 text-center">{caption}</p>}
     </div>
   </dialog>
 </div>
@@ -93,7 +76,7 @@ const id = `modal-${Math.random().toString(36).substring(2, 11)}`;
 
 <script>
   // Close dialog when clicking outside the image
-  document.querySelectorAll('dialog').forEach(dialog => {
+  document.querySelectorAll('dialog').forEach((dialog) => {
     dialog.addEventListener('click', (e) => {
       if (e.target === dialog) {
         dialog.close();

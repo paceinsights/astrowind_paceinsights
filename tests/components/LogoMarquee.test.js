@@ -6,7 +6,11 @@ describe('LogoMarquee', () => {
     const { getByText, getAllByAltText } = await render(LogoMarquee);
     expect(getByText('Trusted by world-class teams - not just for AI.')).toBeTruthy();
     // At least one logo should be present
-    expect(getAllByAltText(/Aston Martin|British Athletics|British Sailing|British Swimming|English Institute of Sport|GB Boxing|GB Rowing|INEOS 159|Multimatic Motorsports|Paralympc-gb|Team Sky|WBS|WWA|british equestrian federation|vis_orig/).length).toBeGreaterThan(0);
+    expect(
+      getAllByAltText(
+        /Aston Martin|British Athletics|British Sailing|British Swimming|English Institute of Sport|GB Boxing|GB Rowing|INEOS 159|Multimatic Motorsports|Paralympc-gb|Team Sky|WBS|WWA|british equestrian federation|vis_orig/
+      ).length
+    ).toBeGreaterThan(0);
   });
 
   it('renders with a custom label', async () => {
