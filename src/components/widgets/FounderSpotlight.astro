@@ -1,0 +1,94 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Image from '~/components/common/Image.astro';
+import type { Widget } from '~/types';
+import type { ImageMetadata } from 'astro';
+
+export interface Props extends Widget {
+  image?: {
+    src: string | ImageMetadata;
+    alt: string;
+  };
+}
+
+const { image, id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+    <!-- Left column: Photo + name -->
+    <div class="w-full lg:w-5/12 flex-shrink-0">
+      <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase mb-1">
+        Founder Spotlight
+      </p>
+      <h2 class="text-3xl lg:text-4xl font-bold font-heading text-heading tracking-tighter mb-2">Samir Abid</h2>
+      <p class="text-lg text-muted dark:text-slate-400 mb-6">Engineer. MBA. Performance Specialist.</p>
+
+      {
+        image && (
+          <div class="relative w-full">
+            {typeof image === 'string' ? (
+              <Fragment set:html={image} />
+            ) : (
+              <Image
+                class="rounded-xl w-full h-auto object-cover object-top shadow-lg"
+                widths={[400, 768]}
+                sizes="(max-width: 1023px) 100vw, 40vw"
+                loading="eager"
+                width={560}
+                height={560}
+                {...image}
+              />
+            )}
+          </div>
+        )
+      }
+    </div>
+
+    <!-- Right column -->
+    <div class="w-full lg:w-7/12 space-y-5">
+      <p class="text-base text-muted dark:text-slate-400 leading-relaxed">
+        I'm an engineer by training. <strong class="text-default dark:text-white">Chartered Mechanical Engineer</strong
+        >,
+        <strong class="text-default dark:text-white">MBA from Warwick Business School</strong>, where I still supervise
+        dissertations.
+      </p>
+
+      <p class="text-base text-muted dark:text-slate-400 leading-relaxed">
+        I've spent 20 years in environments where performance is measured properly — automotive, motorsport, Olympic
+        sport. I built data systems and analytical tools that were actually used to make decisions. In Olympic sport
+        alone I worked with 35+ national organisations and contributed to 41 gold medals.
+      </p>
+
+      <p class="text-base text-muted dark:text-slate-400 leading-relaxed">
+        For the last 15 years I've run my own businesses — building and selling digital products and <strong
+          class="text-default dark:text-white">working directly with leadership teams</strong
+        >
+        who aren't technical but need technology to work for them.
+      </p>
+
+      <p class="text-base text-muted dark:text-slate-400 leading-relaxed">
+        The last three years have been full-time applied AI. Not talking about it. Using it inside real operations — in
+        professional services, engineering, recruitment, energy. One recent project replaced what would have been
+        <strong class="text-default dark:text-white"
+          >six weeks of multi-person development — done solo, in four hours</strong
+        >. I also run a
+        <strong class="text-default dark:text-white">600-member AI practitioner community</strong>, which keeps me
+        honest about what's actually working.
+      </p>
+
+      <p class="text-base text-muted dark:text-slate-400 leading-relaxed">
+        I see AI as leverage — <strong class="text-default dark:text-white"
+          >not a replacement for judgement, creativity or relationships</strong
+        >. The technology is only useful if the people around it trust it and know what to do with it.
+      </p>
+
+      <div class="border-l-4 border-primary dark:border-blue-400 pl-5 py-1 mt-2">
+        <p class="text-base text-default dark:text-slate-200 leading-relaxed">
+          Today I partner with a small number of organisations to apply AI across
+          <strong>operations, service delivery and new product ideas</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>

@@ -21,6 +21,8 @@
   - Removed unused `metadata` variable from `community.astro` (redirect-only page)
   - Replaced `arguments` with rest params (`...args`) in `Analytics.astro` Plausible script + added `is:inline`
 
+- [x] **Replace About Samir section with Founder Spotlight** — Built custom `FounderSpotlight.astro` component replacing Steps3. Narrative copy targeting non-technical business leaders, with bolding on business-relevant signals (credentials, leadership teams, concrete AI proof point, philosophy). _(2026-02-11)_
+
 ## Discovered During Work
 
 - [ ] **Review wider homepage messaging** — Owner noted the homepage may need further copy updates as the business evolves.
