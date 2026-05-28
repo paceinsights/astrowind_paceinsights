@@ -26,6 +26,8 @@
 - [x] **Add CHP logo to homepage carousel** — Copied CHP logo from raw assets, imported and integrated it into `LogoMarquee.astro` in alphabetical order, and ran full check suite with success. _(2026-05-28)_
 - [x] **Update homepage hero image** — Copied `Samir Abid - desk1.png` to production assets, replaced the AI strategy illustration in `src/pages/index.astro` Hero section with this new image of Samir Abid, and verified formatting and project build. _(2026-05-28)_
 - [x] **Update homepage hero copy** — Revised tagline to "AI Product Partner" and updated the title and subtitle in `src/pages/index.astro` to focus on productizing expertise and knowledge assets. _(2026-05-28)_
+- [x] **Remove Jeff Braun testimonial** — Removed the Jeff Braun testimonial block from `src/pages/index.astro` and cleaned up its unused image import to prevent lint warnings. _(2026-05-28)_
+- [x] **Center homepage testimonials** — Updated `Testimonials.astro` to dynamically apply centered, beautifully-sized, literal grid column classes using Astro's `class:list` when there are fewer than 3 testimonials on the page. _(2026-05-28)_
 
 ## Discovered During Work
 

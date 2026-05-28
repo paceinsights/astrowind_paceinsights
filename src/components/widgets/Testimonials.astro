@@ -22,7 +22,14 @@ const {
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div
+    class:list={[
+      'grid gap-6 justify-center sm:grid-cols-2',
+      testimonials && testimonials.length === 1 && 'lg:grid-cols-1 max-w-md mx-auto',
+      testimonials && testimonials.length === 2 && 'lg:grid-cols-2 max-w-4xl mx-auto',
+      testimonials && testimonials.length >= 3 && 'lg:grid-cols-3',
+    ]}
+  >
     {
       testimonials &&
         testimonials.map(({ title, testimonial, name, job, image }) => (
