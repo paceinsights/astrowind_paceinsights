@@ -22,6 +22,8 @@
   - Replaced `arguments` with rest params (`...args`) in `Analytics.astro` Plausible script + added `is:inline`
 
 - [x] **Replace About Samir section with Founder Spotlight** — Built custom `FounderSpotlight.astro` component replacing Steps3. Narrative copy targeting non-technical business leaders, with bolding on business-relevant signals (credentials, leadership teams, concrete AI proof point, philosophy). _(2026-02-11)_
+- [x] **Create reusable Samir blog voice and SEO skill** — Added `.windsurf/skills/samir-blog-voice-seo/SKILL.md` covering Samir Abid voice rules, blog SEO checks, internal linking, validation, and pre-commit expectations. _(2026-05-28)_
+- [x] **Add CHP logo to homepage carousel** — Copied CHP logo from raw assets, imported and integrated it into `LogoMarquee.astro` in alphabetical order, and ran full check suite with success. _(2026-05-28)_
 
 ## Discovered During Work
 
