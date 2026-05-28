@@ -24,6 +24,8 @@
 - [x] **Replace About Samir section with Founder Spotlight** — Built custom `FounderSpotlight.astro` component replacing Steps3. Narrative copy targeting non-technical business leaders, with bolding on business-relevant signals (credentials, leadership teams, concrete AI proof point, philosophy). _(2026-02-11)_
 - [x] **Create reusable Samir blog voice and SEO skill** — Added `.windsurf/skills/samir-blog-voice-seo/SKILL.md` covering Samir Abid voice rules, blog SEO checks, internal linking, validation, and pre-commit expectations. _(2026-05-28)_
 - [x] **Add CHP logo to homepage carousel** — Copied CHP logo from raw assets, imported and integrated it into `LogoMarquee.astro` in alphabetical order, and ran full check suite with success. _(2026-05-28)_
+- [x] **Update homepage hero image** — Copied `Samir Abid - desk1.png` to production assets, replaced the AI strategy illustration in `src/pages/index.astro` Hero section with this new image of Samir Abid, and verified formatting and project build. _(2026-05-28)_
+- [x] **Update homepage hero copy** — Revised tagline to "AI Product Partner" and updated the title and subtitle in `src/pages/index.astro` to focus on productizing expertise and knowledge assets. _(2026-05-28)_
 
 ## Discovered During Work
 
