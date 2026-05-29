@@ -2,6 +2,7 @@
 
 ## Completed
 
+- [x] **Add intelligence layer examples to homepage** — Created reusable `CaseStudy.astro` widget (pipeline + synthesis SVG diagram variants) and added an "Examples of intelligence layers we help build" section to `src/pages/index.astro`, placed between the logo marquee and the testimonials. Wrapped in `WidgetWrapper` + `Headline` for theme/dark-mode consistency instead of the adviser's raw `<section>` + stock palette classes. _(2026-05-29)_
 - [x] **Change Learn More CTA target** — Redirected the "Learn More" CTA on the homepage hero to anchor link down to the Founder Spotlight section (`#founder`), and cleaned up the unused `getPermalink` import from `src/pages/index.astro`. _(2026-05-29)_
 - [x] **Update hero image to sailboat** — Cropped `sail-boat-into-sunset1.jpg` to a 1:1 aspect ratio with a precise custom crop placing the horizon exactly 3/4 from the top and 1/4 from the bottom, saved as `sail-boat-into-sunset-horizon-bottom.jpg` (bypassing any local build/browser caching), imported and set it as the hero image in `src/pages/index.astro`, and verified all quality and formatting checks. _(2026-05-29)_
 - [x] **Change image in founder section** — Updated the Founder Spotlight section in `src/pages/index.astro` to use the same desk image (`Samir Abid - desk1.png`) used in the hero, and removed the unused standing image import. _(2026-05-29)_

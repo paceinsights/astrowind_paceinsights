@@ -6,6 +6,9 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import FounderSpotlight from '~/components/widgets/FounderSpotlight.astro';
 import LogoMarquee from '~/components/LogoMarquee.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
+import CaseStudy from '~/components/widgets/CaseStudy.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
 
 import { headerData } from '~/navigation';
 
@@ -76,6 +79,34 @@ const heroActions = [
 
   <!-- Logo Marquee Section -->
   <LogoMarquee label="Trusted by world-class teams - not just for AI." />
+
+  <!-- Intelligence Layer Examples Section -->
+  <WidgetWrapper containerClass="max-w-5xl mx-auto">
+    <Headline
+      title="2 examples of intelligence layers we've built"
+      subtitle="The common shift is that our partners' specialist expertise becomes a working, scalable asset."
+    />
+
+    <div class="grid gap-6">
+      <CaseStudy
+        variant="pipeline"
+        tag="1 - Regulatory intelligence"
+        title="A regulatory intelligence layer"
+        subtitle="for a management consulting firm"
+        challenge="Decades of reports and client insight — value that was hard to search, connect and reuse at speed."
+        whatChanges="Trusted regulatory insight on demand — the latest position, how it evolved, and the reasoning behind past advice."
+      />
+      <br /><br />
+      <CaseStudy
+        variant="synthesis"
+        tag="2 - Decision support"
+        title="A finanical decision-support layer"
+        subtitle="for a regulated professional services firm"
+        challenge="High-value financial decisions, incomplete information, fast-moving markets. Senior judgement is essential but hard to scale."
+        whatChanges="Juniors work with stronger guidance, seniors focus on the highest-value calls, and the firm's expertise applies consistently."
+      />
+    </div>
+  </WidgetWrapper>
 
   <!-- Testimonials Section -->
   <Testimonials
