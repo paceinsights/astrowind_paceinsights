@@ -4,6 +4,8 @@
 
 ## Completed
 
+- [x] **Fix sticky header scroll trigger and z-index** — Fix the sticky header scroll styling trigger to activate sooner, fix a JS throttling lock bug, and increase header z-index to avoid overlapping with page content. _(2026-05-29)_
+
 - [x] **Add Case Studies link to footer** — Add a link to the case study examples (`/#examples`) in the footer links. _(2026-05-29)_
 
 - [x] **Change Learn More CTA target to new casestudy examples** — Change the "Learn More" CTA on the homepage to scroll down to the examples of intelligence layers. _(2026-05-29)_
