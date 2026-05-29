@@ -10,8 +10,8 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import { headerData } from '~/navigation';
 import { getPermalink } from '~/utils/permalinks';
 
-import samirRaceEngineerImage from '~/assets/images/Samir Abid standing2.png'; // Updated image import
 import samirDeskImage from '~/assets/images/Samir Abid - desk1.png'; // New hero image of Samir Abid at his desk
+import sailBoatImage from '~/assets/images/sail-boat-into-sunset-horizon-bottom.jpg'; // New sailboat hero image
 
 // Import testimonial images
 import tomRobertsImage from '~/assets/images/people_images/Tom_Roberts.png';
@@ -54,8 +54,8 @@ const heroActions = [
     tagline="AI Product Partner"
     actions={heroActions}
     image={{
-      src: samirDeskImage,
-      alt: 'Samir Abid — Founder, Pace Insights',
+      src: sailBoatImage,
+      alt: 'Sailing boat navigating towards the horizon at sunset — symbolizing clarity and direction in AI product strategy',
     }}
   >
     <Fragment slot="title">
@@ -106,7 +106,7 @@ const heroActions = [
   <!-- Founder Spotlight Section -->
   <FounderSpotlight
     image={{
-      src: samirRaceEngineerImage,
+      src: samirDeskImage,
       alt: 'Samir Abid - Founder, Pace Insights',
     }}
   >
