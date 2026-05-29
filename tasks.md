@@ -2,9 +2,9 @@
 
 ## In Progress
 
-- [ ] **Add Case Studies link to footer** — Add a link to the case study examples (`/#examples`) in the footer links. _(2026-05-29)_
-
 ## Completed
+
+- [x] **Add Case Studies link to footer** — Add a link to the case study examples (`/#examples`) in the footer links. _(2026-05-29)_
 
 - [x] **Change Learn More CTA target to new casestudy examples** — Change the "Learn More" CTA on the homepage to scroll down to the examples of intelligence layers. _(2026-05-29)_
 

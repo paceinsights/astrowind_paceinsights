@@ -35,6 +35,7 @@ export const footerData = {
           target: '_blank',
           rel: 'noopener noreferrer',
         },
+        { text: 'Case Studies', href: getPermalink('/') + '#examples' },
         { text: 'Articles', href: getPermalink('/articles') },
         { text: 'Community', href: getPermalink('/community') },
       ],
