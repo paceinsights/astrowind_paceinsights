@@ -37,7 +37,7 @@ const heroActions = [
   },
   {
     text: 'Learn More',
-    href: getPermalink('/articles'),
+    href: '#founder',
     variant: 'secondary' as const,
   },
 ] satisfies CallToActionType[];
@@ -51,7 +51,7 @@ const heroActions = [
 
   <!-- Hero Section -->
   <Hero2
-    tagline="AI Product Partner"
+    tagline="AI Partner"
     actions={heroActions}
     image={{
       src: sailBoatImage,
@@ -60,17 +60,18 @@ const heroActions = [
   >
     <Fragment slot="title">
       Your knowledge has always been your value.
-      <span class="text-primary dark:text-white highlight"> Now it can be your product.</span>
+      <span class="text-primary dark:text-white highlight"> Now it can help you grow.</span>
     </Fragment>
     <Fragment slot="subtitle">
-      Your firm is built on expertise your clients pay a premium for.
+      Your firm is built on expertise your clients trust.
       <br /><br />
-      But most of it lives in people’s heads. It’s hard to scale, hard to package, and hard to turn into an asset.
+      But too much of that value is trapped in people’s heads, reports and one-off advice. It’s hard to capture, hard to
+      package, and hard to turn into a scalable asset.
       <br /><br />
-      But what if that knowledge could become a product?
+      But what if your expertise could create value in ways it never could before?
       <br /><br />
-      We work with you to shape the right product opportunity, test it with a prototype, and see whether it can become a
-      real business we build together.
+      We partner with expert-led firms to turn their knowledge, judgement and methods into AI-enabled products and services
+      — creating new revenue, new client value, and new possibilities for their industry.
     </Fragment>
   </Hero2>
 
@@ -105,6 +106,7 @@ const heroActions = [
 
   <!-- Founder Spotlight Section -->
   <FounderSpotlight
+    id="founder"
     image={{
       src: samirDeskImage,
       alt: 'Samir Abid - Founder, Pace Insights',

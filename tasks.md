@@ -1,5 +1,9 @@
 # Pace Insights – Task Tracker
 
+## In Progress
+
+- [ ] **Change Learn More CTA target** — Redirect the "Learn More" CTA on the homepage hero to anchor link down to the Founder Spotlight section (`#founder`) _(2026-05-29)_
+
 ## Completed
 
 - [x] **Update hero image to sailboat** — Cropped `sail-boat-into-sunset1.jpg` to a 1:1 aspect ratio with a precise custom crop placing the horizon exactly 3/4 from the top and 1/4 from the bottom, saved as `sail-boat-into-sunset-horizon-bottom.jpg` (bypassing any local build/browser caching), imported and set it as the hero image in `src/pages/index.astro`, and verified all quality and formatting checks. _(2026-05-29)_
