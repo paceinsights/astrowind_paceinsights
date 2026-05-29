@@ -1,6 +1,12 @@
 # Pace Insights – Task Tracker
 
+## In Progress
+
+- [ ] **Add Case Studies link to footer** — Add a link to the case study examples (`/#examples`) in the footer links. _(2026-05-29)_
+
 ## Completed
+
+- [x] **Change Learn More CTA target to new casestudy examples** — Change the "Learn More" CTA on the homepage to scroll down to the examples of intelligence layers. _(2026-05-29)_
 
 - [x] **Add intelligence layer examples to homepage** — Created reusable `CaseStudy.astro` widget (pipeline + synthesis SVG diagram variants) and added an "Examples of intelligence layers we help build" section to `src/pages/index.astro`, placed between the logo marquee and the testimonials. Wrapped in `WidgetWrapper` + `Headline` for theme/dark-mode consistency instead of the adviser's raw `<section>` + stock palette classes. _(2026-05-29)_
 - [x] **Change Learn More CTA target** — Redirected the "Learn More" CTA on the homepage hero to anchor link down to the Founder Spotlight section (`#founder`), and cleaned up the unused `getPermalink` import from `src/pages/index.astro`. _(2026-05-29)_
