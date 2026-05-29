@@ -7,8 +7,8 @@ import FounderSpotlight from '~/components/widgets/FounderSpotlight.astro';
 import LogoMarquee from '~/components/LogoMarquee.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import CaseStudy from '~/components/widgets/CaseStudy.astro';
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
 
 import { headerData } from '~/navigation';
 
@@ -80,33 +80,50 @@ const heroActions = [
   <!-- Logo Marquee Section -->
   <LogoMarquee label="Trusted by world-class teams - not just for AI." />
 
-  <!-- Intelligence Layer Examples Section -->
-  <WidgetWrapper id="examples" containerClass="max-w-5xl mx-auto">
-    <Headline
-      title="2 examples of intelligence layers we've built"
-      subtitle="The common shift is that our partners' specialist expertise becomes a working, scalable asset."
-    />
+  <!-- Scroll cue pointing to the examples section -->
+  <div class="flex justify-center -mt-2 md:-mt-4">
+    <a
+      href="#examples"
+      class="group inline-flex flex-col items-center gap-1 text-muted hover:text-primary transition-colors"
+      aria-label="See examples of intelligence layers we've built"
+    >
+      <span class="text-sm font-medium tracking-wide uppercase">See examples</span>
+      <Icon name="tabler:chevron-down" class="w-6 h-6 motion-safe:animate-bounce" />
+    </a>
+  </div>
 
-    <div class="grid gap-6">
-      <CaseStudy
-        variant="pipeline"
-        tag="1 - Regulatory intelligence"
-        title="A regulatory intelligence layer"
-        subtitle="for a management consulting firm"
-        challenge="Decades of reports and client insight — value that was hard to search, connect and reuse at speed."
-        whatChanges="Trusted regulatory insight on demand — the latest position, how it evolved, and the reasoning behind past advice."
+  <!-- Intelligence Layer Examples Section -->
+  <section id="examples" class="relative not-prose scroll-mt-[72px]">
+    <div class="relative mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default">
+      <Headline
+        title="2 examples of intelligence layers we've built"
+        subtitle="The common shift is that our partners' specialist expertise becomes a working, scalable asset."
       />
-      <br /><br />
-      <CaseStudy
-        variant="synthesis"
-        tag="2 - Decision support"
-        title="A finanical decision-support layer"
-        subtitle="for a regulated professional services firm"
-        challenge="High-value financial decisions, incomplete information, fast-moving markets. Senior judgement is essential but hard to scale."
-        whatChanges="Juniors work with stronger guidance, seniors focus on the highest-value calls, and the firm's expertise applies consistently."
-      />
+
+      <div class="grid gap-8 md:gap-10">
+        <div class="intersect-once intersect-quarter motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0">
+          <CaseStudy
+            variant="pipeline"
+            tag="1 - Regulatory intelligence"
+            title="A regulatory intelligence layer"
+            subtitle="for a management consulting firm"
+            challenge="Decades of reports and client insight — value that was hard to search, connect and reuse at speed."
+            whatChanges="Trusted regulatory insight on demand — the latest position, how it evolved, and the reasoning behind past advice."
+          />
+        </div>
+        <div class="intersect-once intersect-quarter motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0">
+          <CaseStudy
+            variant="synthesis"
+            tag="2 - Decision support"
+            title="A finanical decision-support layer"
+            subtitle="for a regulated professional services firm"
+            challenge="High-value financial decisions, incomplete information, fast-moving markets. Senior judgement is essential but hard to scale."
+            whatChanges="Juniors work with stronger guidance, seniors focus on the highest-value calls, and the firm's expertise applies consistently."
+          />
+        </div>
+      </div>
     </div>
-  </WidgetWrapper>
+  </section>
 
   <!-- Testimonials Section -->
   <Testimonials
