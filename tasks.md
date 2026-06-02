@@ -4,6 +4,8 @@
 
 ## Completed
 
+- [x] **Update hero text on the homepage** — Updated homepage hero copy to the revised messaging focusing on trapped knowledge, packaging/scaling expertise, and turning it into AI-enabled products. _(2026-06-02)_
+
 - [x] **Fix sticky header scroll trigger and z-index** — Fix the sticky header scroll styling trigger to activate sooner, fix a JS throttling lock bug, and increase header z-index to avoid overlapping with page content. _(2026-05-29)_
 
 - [x] **Add Case Studies link to footer** — Add a link to the case study examples (`/#examples`) in the footer links. _(2026-05-29)_
