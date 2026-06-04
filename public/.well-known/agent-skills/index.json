@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "agent-registration",
+      "type": "skill-md",
+      "description": "How agents register and authenticate with the Pace Insights APIs",
+      "url": "https://paceinsights.com/auth.md",
+      "digest": "sha256:c2e66b4bcae458b34231d7b783cd40fdeff5d2e38c576724a82eaed990c07e28"
+    }
+  ]
+}

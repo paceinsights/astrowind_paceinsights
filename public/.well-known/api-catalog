@@ -1,0 +1,29 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://paceinsights.com/api",
+      "service-desc": [
+        {
+          "href": "https://paceinsights.com/api/openapi.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://paceinsights.com/docs/api",
+          "type": "text/html"
+        },
+        {
+          "href": "https://paceinsights.com/auth.md",
+          "type": "text/markdown"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://paceinsights.com/api/health",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

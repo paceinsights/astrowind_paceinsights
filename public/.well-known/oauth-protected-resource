@@ -1,0 +1,13 @@
+{
+  "resource": "https://paceinsights.com/api",
+  "authorization_servers": [
+    "https://paceinsights.com"
+  ],
+  "scopes_supported": [
+    "api:read",
+    "api:write"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ]
+}

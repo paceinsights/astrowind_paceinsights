@@ -4,6 +4,8 @@
 
 ## Completed
 
+- [x] **Implement agent-readiness and discovery endpoints (RFC 8288, RFC 9727, RFC 9728, DNS-AID, WebMCP, Content Signals)** — Added comprehensive AI-agent friendliness across headers, content negotiation, robots.txt, API catalog, OAuth metadata, auth.md, MCP, Agent Skills, and WebMCP. Included detailed BIND dns-aid.zone file. All checks (Astro, ESLint, Prettier) pass. _(2026-06-04)_
+
 - [x] **Update hero text on the homepage** — Updated homepage hero copy to the revised messaging focusing on trapped knowledge, packaging/scaling expertise, and turning it into AI-enabled products. _(2026-06-02)_
 
 - [x] **Fix sticky header scroll trigger and z-index** — Fix the sticky header scroll styling trigger to activate sooner, fix a JS throttling lock bug, and increase header z-index to avoid overlapping with page content. _(2026-05-29)_

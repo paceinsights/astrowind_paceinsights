@@ -1,0 +1,52 @@
+{
+  "serverInfo": {
+    "name": "Pace Insights Applied AI Server",
+    "version": "1.0.0"
+  },
+  "endpoint": "https://paceinsights.com/api/mcp",
+  "capabilities": {
+    "tools": [
+      {
+        "name": "search_articles",
+        "description": "Query Pace Insights blog posts and case studies",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "Topic or keyword to search for"
+            }
+          },
+          "required": ["query"]
+        }
+      },
+      {
+        "name": "book_discovery_call",
+        "description": "Triggers or schedules a discovery call with Samir Abid",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "proposed_date": {
+              "type": "string",
+              "description": "ISO date string representing a preferred meeting date"
+            }
+          }
+        }
+      }
+    ],
+    "resources": [
+      {
+        "uri": "paceinsights://case-studies/pipeline-synthesis",
+        "name": "Case Study: Pipeline and Synthesis Intelligence Layers",
+        "mimeType": "application/json",
+        "description": "Structured details about built intelligence layers and architectural trade-offs."
+      }
+    ],
+    "prompts": [
+      {
+        "name": "analyze-business-constraints",
+        "description": "Provides a prompt template to help analyze current business bottlenecks and opportunities for AI intelligence layers."
+      }
+    ]
+  }
+}

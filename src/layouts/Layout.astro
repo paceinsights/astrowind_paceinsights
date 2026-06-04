@@ -38,6 +38,81 @@ const { language, textDirection } = I18N;
 
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
+
+    <!-- WebMCP Agent Tools Discovery -->
+    <script is:inline>
+      (function () {
+        const registerTools = () => {
+          if (!navigator.modelContext) return;
+
+          const tools = [
+            {
+              name: 'search_articles',
+              description: 'Search blog posts, guides, and case studies on Pace Insights',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  query: {
+                    type: 'string',
+                    description: 'The search query or keywords to look for',
+                  },
+                },
+                required: ['query'],
+              },
+              execute: async ({ query }) => {
+                window.location.href = `/articles?q=${encodeURIComponent(query)}`;
+                return { success: true, message: `Redirecting to search results for: ${query}` };
+              },
+            },
+            {
+              name: 'book_discovery_call',
+              description:
+                'Open the TidyCal booking calendar to schedule a free 30-minute Applied AI discovery call with Samir Abid',
+              inputSchema: {
+                type: 'object',
+                properties: {},
+              },
+              execute: async () => {
+                window.open('https://tidycal.com/yourdatadriven/discovery-call', '_blank');
+                return { success: true, message: 'Opened TidyCal booking page in a new window.' };
+              },
+            },
+          ];
+
+          // 1. Support navigator.modelContext.provideContext
+          if (typeof navigator.modelContext.provideContext === 'function') {
+            try {
+              navigator.modelContext.provideContext({ tools });
+              console.log('[WebMCP] Registered tools via provideContext');
+            } catch (e) {
+              console.warn('[WebMCP] provideContext failed:', e);
+            }
+          }
+
+          // 2. Support navigator.modelContext.registerTool
+          if (typeof navigator.modelContext.registerTool === 'function') {
+            try {
+              for (const tool of tools) {
+                navigator.modelContext.registerTool(tool);
+              }
+              console.log('[WebMCP] Registered tools via registerTool');
+            } catch (e) {
+              console.warn('[WebMCP] registerTool failed:', e);
+            }
+          }
+        };
+
+        // Register tools on initial load
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', registerTools);
+        } else {
+          registerTools();
+        }
+
+        // Re-register tools after Astro Page swaps (View Transitions)
+        document.addEventListener('astro:after-swap', registerTools);
+      })();
+    </script>
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">

@@ -1,0 +1,14 @@
+; ==============================================================================
+; DNS-AID (DNS for AI Discovery) Zone Records for paceinsights.com
+; Ref: IETF draft-mozleywilliams-dnsop-dnsaid / RFC 9460
+; ==============================================================================
+; Copy and import these records into your DNS provider's zone file (e.g., Netlify DNS, Cloudflare, Route 53, or Namecheap)
+; Make sure your DNS zone is signed with DNSSEC so resolvers return authenticated data.
+
+; 1. Agent connection SVCB (Service Binding) Record
+; Specifies endpoint connection parameters (ALPN, port) for agent-to-agent interactions
+_a2a._agents.paceinsights.com.      3600  IN  SVCB    1 paceinsights.com. alpn="a2a" port=443 mandatory=alpn,port
+
+; 2. Agent index discovery TXT Record
+; Lists active agent endpoints and their protocol interfaces available under the domain
+_index._agents.paceinsights.com.    3600  IN  TXT     "agents=chat:mcp,billing:a2a,support:https"
