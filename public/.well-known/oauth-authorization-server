@@ -22,9 +22,14 @@
     "client_secret_basic",
     "private_key_jwt"
   ],
+  "revocation_endpoint": "https://paceinsights.com/oauth/revoke",
   "agent_auth": {
     "skill": "https://paceinsights.com/auth.md",
     "register_uri": "https://paceinsights.com/api/agent/register",
+    "revocation_uri": "https://paceinsights.com/api/agent/revoke",
+    "events_supported": [
+      "credential_revoked"
+    ],
     "identity_types_supported": [
       "anonymous",
       "verified_email"
@@ -39,7 +44,12 @@
       "credential_types_supported": [
         "api_key"
       ],
-      "claim_uri": "https://paceinsights.com/api/agent/claim"
+      "claim_uri": "https://paceinsights.com/api/agent/claim",
+      "identity_assertion": {
+        "assertion_types_supported": [
+          "verified_email"
+        ]
+      }
     }
   }
 }

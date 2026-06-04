@@ -48,3 +48,5 @@
 ## Discovered During Work
 
 - [ ] **Review wider homepage messaging** — Owner noted the homepage may need further copy updates as the business evolves.
+
+- [ ] **Publish DNS-AID records (manual DNS provider action)** — Add the `_a2a._agents` SVCB and `_index._agents` TXT records from `dns-aid.zone` to the authoritative DNS for `paceinsights.com`, and enable DNSSEC. Cannot be done from the repo; requires a DNS provider that supports SVCB/HTTPS records (e.g. Cloudflare, Route 53, DNSimple). _(2026-06-04)_
