@@ -24,3 +24,75 @@
   to = "https://www.paceinsights.com/"
   status = 301
   force = true
+
+# Batch 2 — Fasthosts parks → Pace Insights homepage
+[[redirects]]
+  from = "https://analysisaccelerator.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.analysisaccelerator.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://athletestoryboard.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.athletestoryboard.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://entiaconsulting.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.entiaconsulting.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://entiadesign.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.entiadesign.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://insightry.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.insightry.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://nascententrepreneur.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.nascententrepreneur.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://optry.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.optry.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
