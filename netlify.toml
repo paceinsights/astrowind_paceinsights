@@ -11,3 +11,16 @@
 [[edge_functions]]
   path = "/*"
   function = "markdown-negotiation"
+
+# Batch 1 — carfinancecompared.com → Pace Insights homepage
+# Host must be in `from`. conditions.Host did not fire on domain aliases.
+[[redirects]]
+  from = "https://carfinancecompared.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.carfinancecompared.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
