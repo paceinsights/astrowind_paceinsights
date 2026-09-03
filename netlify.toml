@@ -96,3 +96,15 @@
   to = "https://www.paceinsights.com/"
   status = 301
   force = true
+
+# Batch 4 — samirs.ai → Pace Insights homepage
+[[redirects]]
+  from = "https://samirs.ai/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.samirs.ai/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
