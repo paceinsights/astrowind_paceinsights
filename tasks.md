@@ -2,6 +2,8 @@
 
 ## In Progress
 
+- [ ] **Draft blog: Personal Assistants Are Starting to Just Work** — New article from community notes, with SEO frontmatter and hero image; local preview before push. _(2026-09-04)_
+
 ## Completed
 
 - [x] **Implement agent-readiness and discovery endpoints (RFC 8288, RFC 9727, RFC 9728, DNS-AID, WebMCP, Content Signals)** — Added comprehensive AI-agent friendliness across headers, content negotiation, robots.txt, API catalog, OAuth metadata, auth.md, MCP, Agent Skills, and WebMCP. Included detailed BIND dns-aid.zone file. All checks (Astro, ESLint, Prettier) pass. _(2026-06-04)_
