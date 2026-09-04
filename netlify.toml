@@ -108,3 +108,15 @@
   to = "https://www.paceinsights.com/"
   status = 301
   force = true
+
+# Protective variant — paceinsight.com (no s) → Pace Insights homepage
+[[redirects]]
+  from = "https://paceinsight.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.paceinsight.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
