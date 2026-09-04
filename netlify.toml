@@ -120,3 +120,15 @@
   to = "https://www.paceinsights.com/"
   status = 301
   force = true
+
+# Core — entiatech.com → Pace Insights homepage
+[[redirects]]
+  from = "https://entiatech.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.entiatech.com/*"
+  to = "https://www.paceinsights.com/"
+  status = 301
+  force = true
