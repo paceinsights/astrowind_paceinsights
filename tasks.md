@@ -2,6 +2,8 @@
 
 ## In Progress
 
+- [x] **Draft blog: Where is my place in a world of AI?** — New article with SEO frontmatter and hero image. _(2026-09-11)_
+
 - [ ] **Draft blog: Personal Assistants Are Starting to Just Work** — New article from community notes, with SEO frontmatter and hero image; local preview before push. _(2026-09-04)_
 
 ## Completed
