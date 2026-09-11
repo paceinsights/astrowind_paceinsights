@@ -21,7 +21,7 @@ metadata:
     images:
       - url: ~/assets/images/article_images/where-is-my-place-in-a-world-of-ai.png
         width: 1200
-        height: 630
+        height: 675
   twitter:
     cardType: summary_large_image
 ---
