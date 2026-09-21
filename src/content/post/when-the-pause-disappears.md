@@ -2,7 +2,7 @@
 publishDate: 2026-09-21T10:00:00Z
 updateDate: 2026-09-21T10:00:00Z
 title: When the pause disappears
-excerpt: You get used to the little pause. At around 14,000 tokens a second it disappears, and the real question is where human judgement sits.
+excerpt: You get used to the tempo working with AI. But when any pause in generating your answers disappears, the question becomes how can we more effectively and efficiently apply our human judgement.
 image: ~/assets/images/article_images/when-the-pause-disappears.png
 author: Samir Abid
 category: AI Insights
@@ -14,7 +14,7 @@ tags:
   - speed
 metadata:
   title: When the pause disappears
-  description: At around 14,000 tokens a second the little pause disappears. The real question is where human judgement sits once the machines no longer wait.
+  description: You get used to the tempo working with AI. But when any pause in generating your answers disappears, the question becomes how can we more effectively and efficiently apply our human judgement.
   canonical: https://paceinsights.com/articles/when-the-pause-disappears
   openGraph:
     type: article
