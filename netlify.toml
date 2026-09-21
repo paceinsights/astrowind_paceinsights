@@ -8,9 +8,15 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Serve markdown only when the client asks for it.
+# Header match is required: path /* would otherwise invoke (and bill) this
+# function on every asset, crawler, and parked-domain request. Free plan
+# is 1M edge invocations/month for the whole team.
 [[edge_functions]]
   path = "/*"
   function = "markdown-negotiation"
+  [edge_functions.header]
+  accept = "text/markdown"
 
 # Batch 1 — carfinancecompared.com → Pace Insights homepage
 # Host must be in `from`. conditions.Host did not fire on domain aliases.
