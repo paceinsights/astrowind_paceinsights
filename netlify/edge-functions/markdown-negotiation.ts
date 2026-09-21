@@ -1,4 +1,4 @@
-import { Context } from '@netlify/edge-functions';
+import { Config, Context } from '@netlify/edge-functions';
 
 // Decode the most common HTML entities back into plain text characters.
 const decodeEntities = (text: string): string =>
@@ -118,4 +118,14 @@ export default async (request: Request, context: Context) => {
       'Cache-Control': 'public, max-age=0, must-revalidate',
     },
   });
+};
+
+// Header match is required: without it, path /* invokes (and bills) this
+// function on every asset, crawler, and parked-domain request. Free plan
+// is 1M edge invocations/month for the whole team.
+export const config: Config = {
+  path: '/*',
+  header: {
+    accept: 'text/markdown',
+  },
 };
