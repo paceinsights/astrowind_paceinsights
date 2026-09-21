@@ -8,12 +8,6 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Serve markdown only when the client asks for it. Accept: text/markdown is
-# declared on the function itself so Netlify does not bill ordinary traffic.
-[[edge_functions]]
-  path = "/*"
-  function = "markdown-negotiation"
-
 # Batch 1 — carfinancecompared.com → Pace Insights homepage
 # Host must be in `from`. conditions.Host did not fire on domain aliases.
 [[redirects]]
