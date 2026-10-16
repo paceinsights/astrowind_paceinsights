@@ -1,0 +1,4 @@
+ts	id	from	to	note
+2026-10-16T14:01:56Z	T-001		todo	from community notes, with SEO frontmatter and hero image; preview locally before push
+2026-10-16T14:01:56Z	T-002		todo	
+2026-10-16T14:01:57Z	T-003		todo	needs a DNS provider with SVCB records (Cloudflare, Route 53, DNSimple)

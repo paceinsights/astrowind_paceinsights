@@ -22,8 +22,8 @@ Always gather this context before making changes:
 
 1. **Project instructions**
    - Read `instructions.md`.
-   - Read `tasks.md`.
-   - If the task is not listed, add a short task entry with today's date before editing, then mark it complete at the end.
+   - Read `tasks/STATUS.md`.
+   - If the task is not listed, add it with `tasks add content "<title>" --priority 2` before editing, then finish it with `tasks move <id> done --note "<commit>"`. Rules in `tasks/README.md`.
 
 2. **Target article**
    - Read the full target `.md` or `.mdx` file under `src/content/post/`.

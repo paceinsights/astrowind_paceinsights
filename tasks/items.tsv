@@ -1,0 +1,4 @@
+id	state	priority	area	title	due	link	note	updated
+T-001	todo	1	content	Draft blog: Personal Assistants Are Starting to Just Work		tasks/archive/tasks-2026-10-16.md	from community notes, with SEO frontmatter and hero image; preview locally before push	2026-10-16
+T-002	todo	3	content	Review wider homepage messaging		tasks/archive/tasks-2026-10-16.md		2026-10-16
+T-003	todo	3	site	Publish the DNS-AID records and enable DNSSEC at the DNS provider		dns-aid.zone	needs a DNS provider with SVCB records (Cloudflare, Route 53, DNSimple)	2026-10-16
