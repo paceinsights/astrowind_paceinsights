@@ -1,0 +1,5 @@
+# Written by the tasks command. When two branches both change the job lists, git keeps both sides' lines
+# instead of stopping with a conflict. The next tasks command tidies them: the newest version of a job wins,
+# and two different moves of the same job are reported by tasks check.
+*.tsv merge=union
+STATUS.md merge=union
