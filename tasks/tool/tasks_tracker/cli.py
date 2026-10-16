@@ -135,7 +135,7 @@ class Store:
         if not path.exists():
             return []
         with path.open(newline="", encoding="utf-8") as fh:
-            rows = list(csv.reader(fh, delimiter="\t", quoting=csv.QUOTE_NONE))
+            rows = list(csv.reader(fh, delimiter="\t", quoting=csv.QUOTE_NONE, quotechar=None))
         if not rows:
             return []
         if tuple(rows[0]) != columns:
@@ -147,14 +147,24 @@ class Store:
         return body
 
     @staticmethod
-    def _write(path: Path, columns: tuple[str, ...], rows: list[tuple]) -> None:
+    def _stage(path: Path, columns: tuple[str, ...], rows: list[tuple]) -> str:
+        """Write the table to a temporary file next to it and return its name. Quote marks are plain text:
+        cells can't hold tabs or line breaks (clean_cell), so nothing needs quoting."""
         path.parent.mkdir(parents=True, exist_ok=True)
         fd, tmp = tempfile.mkstemp(dir=path.parent, prefix=f".{path.name}.")
-        with os.fdopen(fd, "w", newline="", encoding="utf-8") as fh:
-            writer = csv.writer(fh, delimiter="\t", quoting=csv.QUOTE_NONE, escapechar=None, lineterminator="\n")
-            writer.writerow(columns)
-            writer.writerows([[str(c) for c in row] for row in rows])
-        os.replace(tmp, path)
+        try:
+            with os.fdopen(fd, "w", newline="", encoding="utf-8") as fh:
+                writer = csv.writer(fh, delimiter="\t", quoting=csv.QUOTE_NONE, quotechar=None, lineterminator="\n")
+                writer.writerow(columns)
+                writer.writerows([[str(c) for c in row] for row in rows])
+        except BaseException:
+            os.unlink(tmp)
+            raise
+        return tmp
+
+    @staticmethod
+    def _write(path: Path, columns: tuple[str, ...], rows: list[tuple]) -> None:
+        os.replace(Store._stage(path, columns, rows), path)
 
     def load(self) -> tuple[list[Item], list[Move], list[Decision]]:
         items = []
@@ -177,9 +187,21 @@ class Store:
         problems = validate(items, moves, decisions, self.settings.areas)
         if problems:
             raise TrackerError("refusing to save, the result breaks the rules:\n" + "\n".join(problems))
-        self._write(self.items_path, ITEM_COLUMNS, [astuple(i) for i in items])
-        self._write(self.history_path, MOVE_COLUMNS, [astuple(m) for m in moves])
-        self._write(self.decisions_path, DECISION_COLUMNS, [astuple(d) for d in decisions])
+        # Write every table to a temporary file first, then swap them all in: a failure leaves the old files whole.
+        staged: list[tuple[str, Path]] = []
+        try:
+            for path, columns, rows in (
+                (self.items_path, ITEM_COLUMNS, [astuple(i) for i in items]),
+                (self.history_path, MOVE_COLUMNS, [astuple(m) for m in moves]),
+                (self.decisions_path, DECISION_COLUMNS, [astuple(d) for d in decisions]),
+            ):
+                staged.append((self._stage(path, columns, rows), path))
+        except BaseException:
+            for tmp, _ in staged:
+                os.unlink(tmp)
+            raise
+        for tmp, path in staged:
+            os.replace(tmp, path)
         self.status_path.write_text(self.status(items, moves, decisions), encoding="utf-8")
         if not self.attributes_path.exists():
             self.attributes_path.write_text(GITATTRIBUTES, encoding="utf-8")
